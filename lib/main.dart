@@ -1,3 +1,4 @@
+import 'package:cf8tpr1nt/view/authentication/onboard/view/onboard_view.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -9,29 +10,35 @@ import 'core/init/navigation/navigation_route.dart';
 import 'core/init/navigation/navigation_service.dart';
 import 'core/init/provider/application_provider.dart';
 import 'core/init/provider/theme_provider.dart';
-import 'view/authentication/onboard/view/onboard_view.dart';
 
 Future<void> main() async {
   await _init();
-  runApp(MultiProvider(
-    providers: [...ApplicationProvider.instance.dependItems],
-    child: EasyLocalization(
-      supportedLocales: LanguageManager.instance.supportedLocales,
-      path: ApplicationConstants.LANG_ASSET_PATH,
-      startLocale: LanguageManager.instance.enLocale,
-      child: const MyApp(),
+  runApp(
+    MultiProvider(
+      providers: [
+        ...ApplicationProvider.instance.dependItems,
+      ],
+      child: EasyLocalization(
+        supportedLocales: LanguageManager.instance.supportedLocales,
+        fallbackLocale: LanguageManager.instance.enLocale,
+        path: ApplicationConstants.LANG_ASSET_PATH,
+        child: const MainApp(),
+      ),
     ),
-  ));
+  );
 }
 
 Future<void> _init() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.currentPlatform,
+  // );
   await EasyLocalization.ensureInitialized();
   LocaleManager.preferencesInstance();
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
