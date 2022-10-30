@@ -1,5 +1,8 @@
-import 'package:cf8tpr1nt/core/init/network/i_core_dio.dart';
+// ignore_for_file: overridden_fields
+
 import 'package:dio/dio.dart';
+
+import 'i_core_dio.dart';
 
 class CoreDio with DioMixin implements Dio, ICoreDio {
   @override

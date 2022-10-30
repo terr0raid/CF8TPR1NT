@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../extensions/context_extensions.dart';
 
 abstract class BaseState<T extends StatefulWidget> extends State<T> {

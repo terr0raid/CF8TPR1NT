@@ -18,9 +18,11 @@ extension MediaQueryExtension on BuildContext {
 
 extension SnackBarExtension on BuildContext {
   void showSnackBar(String message) {
-    ScaffoldMessenger.of(this).showSnackBar(SnackBar(
-      content: Text(message),
-    ));
+    ScaffoldMessenger.of(this).showSnackBar(
+      SnackBar(
+        content: Text(message),
+      ),
+    );
   }
 }
 
@@ -39,21 +41,14 @@ extension PaddingExtensionAll on BuildContext {
 
 extension PaddingExtensionSymetric on BuildContext {
   EdgeInsets get paddingLowVertical => EdgeInsets.symmetric(vertical: lowValue);
-  EdgeInsets get paddingNormalVertical =>
-      EdgeInsets.symmetric(vertical: normalValue);
-  EdgeInsets get paddingMediumVertical =>
-      EdgeInsets.symmetric(vertical: mediumValue);
-  EdgeInsets get paddingHighVertical =>
-      EdgeInsets.symmetric(vertical: highValue);
+  EdgeInsets get paddingNormalVertical => EdgeInsets.symmetric(vertical: normalValue);
+  EdgeInsets get paddingMediumVertical => EdgeInsets.symmetric(vertical: mediumValue);
+  EdgeInsets get paddingHighVertical => EdgeInsets.symmetric(vertical: highValue);
 
-  EdgeInsets get paddingLowHorizontal =>
-      EdgeInsets.symmetric(horizontal: lowValue);
-  EdgeInsets get paddingNormalHorizontal =>
-      EdgeInsets.symmetric(horizontal: normalValue);
-  EdgeInsets get paddingMediumHorizontal =>
-      EdgeInsets.symmetric(horizontal: mediumValue);
-  EdgeInsets get paddingHighHorizontal =>
-      EdgeInsets.symmetric(horizontal: highValue);
+  EdgeInsets get paddingLowHorizontal => EdgeInsets.symmetric(horizontal: lowValue);
+  EdgeInsets get paddingNormalHorizontal => EdgeInsets.symmetric(horizontal: normalValue);
+  EdgeInsets get paddingMediumHorizontal => EdgeInsets.symmetric(horizontal: mediumValue);
+  EdgeInsets get paddingHighHorizontal => EdgeInsets.symmetric(horizontal: highValue);
 }
 
 extension PageExtension on BuildContext {

@@ -14,7 +14,7 @@ class LocaleManager {
     });
   }
 
-  static preferencesInstance() async {
+  static Future<void> preferencesInstance() async {
     _instance._preferences ??= await SharedPreferences.getInstance();
     return;
   }
@@ -25,5 +25,13 @@ class LocaleManager {
 
   String getStringValue(PreferencesKeys key) {
     return _preferences!.getString(key.toString()) ?? '';
+  }
+
+  Future<void> setBoolValue(PreferencesKeys key, bool value) async {
+    await _preferences!.setBool(key.toString(), value);
+  }
+
+  bool? getBoolValue(PreferencesKeys key) {
+    return _preferences!.getBool(key.toString());
   }
 }

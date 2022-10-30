@@ -12,7 +12,7 @@ class NavigationService implements INavigationService {
 
   GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
   // ignore: prefer_function_declarations_over_variables
-  get removeAllOldRoutes => (Route<dynamic> route) => false;
+  bool Function(Route<dynamic>) get removeAllOldRoutes => (Route<dynamic> route) => false;
 
   @override
   Future navigateToPage({required String path, Object? arguments}) async {

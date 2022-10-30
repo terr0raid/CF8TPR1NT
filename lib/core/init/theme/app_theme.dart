@@ -12,20 +12,20 @@ class AppTheme {
 
   static ThemeData get darkTheme => ThemeData.dark().copyWith(
         visualDensity: VisualDensity.standard,
-        scaffoldBackgroundColor: AppColors.BLACK,
+        scaffoldBackgroundColor: AppColors.indigo,
         appBarTheme: const AppBarTheme().copyWith(
-          color: AppColors.BLACK,
+          color: AppColors.indigo,
           systemOverlayStyle: SystemUiOverlayStyle.light,
           elevation: 1,
-          shadowColor: AppColors.WHITE,
+          shadowColor: AppColors.white,
         ),
         bottomAppBarTheme: const BottomAppBarTheme().copyWith(
-          color: AppColors.BLACK,
+          color: AppColors.indigo,
         ),
         bottomNavigationBarTheme: const BottomNavigationBarThemeData().copyWith(
-          backgroundColor: AppColors.BLACK,
-          selectedItemColor: AppColors.WHITE,
-          unselectedItemColor: AppColors.WHITE,
+          backgroundColor: AppColors.indigo,
+          selectedItemColor: AppColors.white,
+          unselectedItemColor: AppColors.white,
           showSelectedLabels: false,
           showUnselectedLabels: false,
           type: BottomNavigationBarType.fixed,
@@ -33,43 +33,43 @@ class AppTheme {
         ),
         snackBarTheme: const SnackBarThemeData().copyWith(
           elevation: 0,
-          backgroundColor: AppColors.WHITE,
-          actionTextColor: AppColors.BLACK,
+          backgroundColor: AppColors.white,
+          actionTextColor: AppColors.indigo,
         ),
-        primaryColor: AppColors.BLACK,
+        primaryColor: AppColors.indigo,
         colorScheme: const ColorScheme.dark().copyWith(
-          primary: AppColors.WHITE,
-          secondary: AppColors.BLACK,
+          primary: AppColors.white,
+          secondary: AppColors.indigo,
         ),
         textTheme: GoogleFonts.ralewayTextTheme().copyWith().apply(
-              displayColor: AppColors.WHITE,
-              bodyColor: AppColors.WHITE,
+              displayColor: AppColors.white,
+              bodyColor: AppColors.white,
             ),
         floatingActionButtonTheme:
             const FloatingActionButtonThemeData().copyWith(
-          backgroundColor: AppColors.WHITE,
-          foregroundColor: AppColors.BLACK,
+          backgroundColor: AppColors.white,
+          foregroundColor: AppColors.indigo,
           elevation: 2.0,
         ),
       );
 
   static ThemeData get lightTheme => ThemeData.light().copyWith(
         visualDensity: VisualDensity.standard,
-        scaffoldBackgroundColor: AppColors.WHITE,
+        scaffoldBackgroundColor: AppColors.white,
         appBarTheme: const AppBarTheme().copyWith(
-          foregroundColor: AppColors.BLACK,
-          color: AppColors.WHITE,
+          foregroundColor: AppColors.indigo,
+          color: AppColors.white,
           systemOverlayStyle: SystemUiOverlayStyle.dark,
           elevation: 1,
-          shadowColor: AppColors.BLACK,
+          shadowColor: AppColors.indigo,
         ),
         bottomAppBarTheme: const BottomAppBarTheme().copyWith(
-          color: AppColors.WHITE,
+          color: AppColors.white,
         ),
         bottomNavigationBarTheme: const BottomNavigationBarThemeData().copyWith(
-          backgroundColor: AppColors.WHITE,
-          selectedItemColor: AppColors.BLACK,
-          unselectedItemColor: AppColors.BLACK,
+          backgroundColor: AppColors.white,
+          selectedItemColor: AppColors.indigo,
+          unselectedItemColor: AppColors.indigo,
           showSelectedLabels: false,
           showUnselectedLabels: false,
           type: BottomNavigationBarType.fixed,
@@ -77,23 +77,23 @@ class AppTheme {
         ),
         snackBarTheme: const SnackBarThemeData().copyWith(
           elevation: 0,
-          backgroundColor: AppColors.BLACK,
-          actionTextColor: AppColors.WHITE,
+          backgroundColor: AppColors.indigo,
+          actionTextColor: AppColors.white,
         ),
-        primaryColor: AppColors.WHITE,
+        primaryColor: AppColors.white,
         colorScheme: const ColorScheme.light().copyWith(
-          primary: AppColors.BLACK,
-          secondary: AppColors.WHITE,
+          primary: AppColors.indigo,
+          secondary: AppColors.white,
         ),
         textTheme: GoogleFonts.ralewayTextTheme().copyWith().apply(
-              displayColor: AppColors.BLACK,
-              bodyColor: AppColors.BLACK,
-              decorationColor: AppColors.BLACK,
+              displayColor: AppColors.indigo,
+              bodyColor: AppColors.indigo,
+              decorationColor: AppColors.indigo,
             ),
         floatingActionButtonTheme:
             const FloatingActionButtonThemeData().copyWith(
-          backgroundColor: AppColors.BLACK,
-          foregroundColor: AppColors.WHITE,
+          backgroundColor: AppColors.indigo,
+          foregroundColor: AppColors.white,
           elevation: 2.0,
         ),
       );

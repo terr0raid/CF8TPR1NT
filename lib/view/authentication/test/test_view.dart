@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
-import '../../../core/base/state/base_state.dart';
-import '../../../core/base/view/base_view.dart';
+import '../../../../core/base/state/base_state.dart';
+import '../../../../core/base/view/base_view.dart';
 import 'test_viewmodel.dart';
 
 class TestView extends StatefulWidget {
