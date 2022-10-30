@@ -1,0 +1,55 @@
+{
+	"welcome": "Welcome",
+	"onBoard": {
+		"page1": {
+			"title": "Welcome!",
+			"desc": "We know you want to make our world beautiful, so welcome."
+		},
+		"page2": {
+			"title": "What's the use?",
+			"desc": "Reduce your damage to nature and earn points by using this application."
+		},
+		"page3": {
+			"title": "How to use?",
+			"desc": "Throw your trash into the special thrash container where you can find on the app and earn points."
+		}
+	},
+	"splash": {
+		"welcome": "Welcome to cf8tpr1nt"
+	},
+	"login": {
+		"tab1": "Login",
+		"tab2": "Register",
+		"email": "Email",
+		"password": "Password",
+		"forgotPassword": "Forgot Password",
+		"login": "Login",
+		"haveAcount": "Don't have an account?"
+	},
+	"home": {
+		"build": {
+			"tabbar": {
+				"tab1": "Containers",
+				"tab2": "Rewards",
+				"tab3": "Your summary",
+				"tab4": "Profile"
+			}
+		},
+		"settings": {
+			"title": "Settings",
+			"about": {
+				"title": "About Project",
+				"contribitions": "Project Contributors"
+			},
+			"core": {
+				"title": "App Settings",
+				"themeTitle": "Theme Change",
+				"themeDesc": "You can change applicaton theme.",
+				"langTitle": "Language Change",
+				"langDesc": "You can change applicaton language."
+			},
+			"exit": "Exit",
+			"applicationTour": "Application Tour"
+		}
+	}
+}

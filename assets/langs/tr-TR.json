@@ -1,0 +1,56 @@
+{
+	"welcome": "Hoşgeldiniz",
+	"onBoard": {
+		"page1": {
+			"title": "Hoşgeldiniz!",
+			"desc": "Dünyayı güzelleştirmek istediğinizi biliyoruz ve bu yüzden hoşgeldiniz."
+		},
+		"page2": {
+			"title": "Ne için kullanılır?",
+			"desc": "Reduce your damage to nature and earn points by using this application."
+		},
+		"page3": {
+			"title": "Nasıl kullanılır?",
+			"desc": "Atık maddelerinizi uygulama üzerinden bulacağınız en yakın atık kutularına atın ve puanlar kazanın."
+		}
+	},
+	"splash": {
+		"welcome": "cf8tpr1nt'e hoşgeldiniz"
+	},
+	"login": {
+		"tab1": "Giriş yap",
+		"tab2": "Kayıt ol",
+		"email": "Mail adresi",
+		"password": "Şifre",
+		"forgotPassword": "Şifremi Unuttum",
+		"login": "Giriş Yap",
+		"register": "Kayıt Ol",
+		"haveAcount": "Henüz bir hesabınız yok mu?"
+	},
+	"home": {
+		"build": {
+			"tabbar": {
+				"tab1": "Çöp Kutuları",
+				"tab2": "Ödüller",
+				"tab3": "Özetiniz",
+				"tab4": "Profil"
+			}
+		},
+		"settings": {
+			"title": "Ayarlar",
+			"about": {
+				"title": "Proje Hakkında",
+				"contribitions": "Proje katkıları"
+			},
+			"core": {
+				"title": "Temel Ayarlar",
+				"themeTitle": "Temayı değiştir",
+				"themeDesc": "Uygulamanın temasını değiştirmek için kullanılır.",
+				"langTitle": "Dili değiştir",
+				"langDesc": "Uygulamanın dilini değiştirmek için kullanılır."
+			},
+			"exit": "Çıkış Yap",
+			"applicationTour": "Uygulama turu"
+		}
+	}
+}
