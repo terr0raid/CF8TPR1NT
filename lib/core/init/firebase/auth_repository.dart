@@ -2,9 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 abstract class IAuthRepository {
-  final FirebaseAuth firebaseAuth;
 
   IAuthRepository(this.firebaseAuth);
+  final FirebaseAuth firebaseAuth;
 
   Future<User?> signInWithGoogle();
   Future<void> signOut();
@@ -12,10 +12,10 @@ abstract class IAuthRepository {
 }
 
 class AuthRepository implements IAuthRepository {
-  @override
-  final FirebaseAuth firebaseAuth;
 
   AuthRepository(this.firebaseAuth);
+  @override
+  final FirebaseAuth firebaseAuth;
 
   @override
   Future<User?> signInWithGoogle() async {

@@ -1,12 +1,11 @@
+import 'package:cf8tpr1nt/core/base/view/base_view.dart';
+import 'package:cf8tpr1nt/core/extensions/context_extensions.dart';
 import 'package:cf8tpr1nt/feature/widgets/avatar/on_board_indicator.dart';
 import 'package:cf8tpr1nt/view/authentication/onboard/model/on_board_model.dart';
 import 'package:cf8tpr1nt/view/authentication/onboard/viewmodel/onboard_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:lottie/lottie.dart';
-
-import '../../../../../core/base/view/base_view.dart';
-import '../../../../../core/extensions/context_extensions.dart';
 
 class OnBoardView extends StatelessWidget {
   const OnBoardView({super.key});
@@ -15,10 +14,11 @@ class OnBoardView extends StatelessWidget {
     return BaseView<OnBoardViewModel>(
       viewModel: OnBoardViewModel(),
       onModelReady: (model) {
-        model.setContext(context);
-        model.init();
+        model
+          ..setContext(context)
+          ..init();
       },
-      builder: (BuildContext context, OnBoardViewModel model) => buildScaffold(context, model),
+      builder: buildScaffold,
     );
   }
 

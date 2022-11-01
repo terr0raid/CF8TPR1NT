@@ -1,8 +1,7 @@
 import 'package:cf8tpr1nt/core/init/cache/locale_manager.dart';
+import 'package:cf8tpr1nt/core/init/navigation/navigation_service.dart';
+import 'package:cf8tpr1nt/core/init/network/network_service.dart';
 import 'package:flutter/material.dart';
-
-import '../../init/navigation/navigation_service.dart';
-import '../../init/network/network_service.dart';
 
 mixin BaseViewModel {
   late BuildContext ctx;

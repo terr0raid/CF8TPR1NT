@@ -2,12 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 
 class BaseView<T extends Store> extends StatefulWidget {
-  final T viewModel;
-  final Widget Function(BuildContext context, T viewModel) builder;
-
-  final Function(T model) onModelReady;
-  final VoidCallback? onDispose;
-
   const BaseView({
     super.key,
     required this.viewModel,
@@ -15,6 +9,11 @@ class BaseView<T extends Store> extends StatefulWidget {
     required this.onModelReady,
     this.onDispose,
   });
+  final T viewModel;
+  final Widget Function(BuildContext context, T viewModel) builder;
+
+  final dynamic Function(T model) onModelReady;
+  final VoidCallback? onDispose;
 
   @override
   State<BaseView> createState() => _BaseViewState<T>();

@@ -1,3 +1,3 @@
-abstract class ICoreDio {
-  void get2(args);
-}
+// abstract class ICoreDio {
+//   void get2(args);
+// }

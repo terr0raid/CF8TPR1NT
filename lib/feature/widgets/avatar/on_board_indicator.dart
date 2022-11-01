@@ -2,8 +2,8 @@ import 'package:cf8tpr1nt/core/extensions/context_extensions.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardIndicator extends StatelessWidget {
-  final bool isSelected;
   const OnBoardIndicator({super.key, required this.isSelected});
+  final bool isSelected;
 
   @override
   Widget build(BuildContext context) {

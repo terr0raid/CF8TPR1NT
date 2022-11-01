@@ -1,8 +1,7 @@
+import 'package:cf8tpr1nt/core/base/state/base_state.dart';
+import 'package:cf8tpr1nt/core/base/view/base_view.dart';
+import 'package:cf8tpr1nt/view/authentication/login/viewmodel/login_view_model.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../../core/base/state/base_state.dart';
-import '../../../../../core/base/view/base_view.dart';
-import '../viewmodel/login_view_model.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -19,8 +18,9 @@ class _LoginViewState extends BaseState<LoginView> {
       viewModel: LoginViewModel(),
       builder: (context, viewModel) => _buildLoginPage(),
       onModelReady: (model) {
-        model.setContext(context);
-        model.init();
+        model
+          ..setContext(context)
+          ..init();
         viewModel = model;
       },
     );

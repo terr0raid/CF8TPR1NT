@@ -1,4 +1,4 @@
-import '../constants/app/app_constants.dart';
+import 'package:cf8tpr1nt/core/constants/app/app_constants.dart';
 
 extension StringValidation on String {
   // String get locale => this.tr();

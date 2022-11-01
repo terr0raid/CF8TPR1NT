@@ -52,9 +52,7 @@ abstract class _OnBoardViewModelBase with Store, BaseViewModel {
   }
 
   @action
-  void setCurrentIndex(int index) {
-    currentIndex = index;
-  }
+  void setCurrentIndex(int index) => currentIndex = index;
 
   @action
   void nextPage() {
@@ -77,7 +75,7 @@ abstract class _OnBoardViewModelBase with Store, BaseViewModel {
 
   Future<void> completeToOnBoard() async {
     changeLoading();
-    await localeManager.setBoolValue(PreferencesKeys.IS_FIRST_APP, true);
+    await localeManager.setBoolValue(PreferencesKeys.IS_FIRST_APP, value: true);
     changeLoading();
     if (navigationService.navigatorKey.currentState!.canPop()) {
       navigationService.navigatorKey.currentState!.pop();

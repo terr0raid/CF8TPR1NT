@@ -1,9 +1,9 @@
-import '../../core/extensions/string_extensions.dart';
+import 'package:cf8tpr1nt/core/extensions/string_extensions.dart';
 
 class ImagePaths {
+  ImagePaths._init();
   static final ImagePaths _instance = ImagePaths._init();
   static ImagePaths get instance => _instance;
-  ImagePaths._init();
 
   //images
   // String get logo => 'assets/images/logo.png';

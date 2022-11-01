@@ -1,9 +1,8 @@
 // ignore_for_file: library_private_types_in_public_api
 
+import 'package:cf8tpr1nt/core/base/model/base_view_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:mobx/mobx.dart';
-
-import '../../../../../core/base/model/base_view_model.dart';
 
 part 'login_view_model.g.dart';
 

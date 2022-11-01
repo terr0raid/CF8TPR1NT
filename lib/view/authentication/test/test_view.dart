@@ -1,9 +1,8 @@
+import 'package:cf8tpr1nt/core/base/state/base_state.dart';
+import 'package:cf8tpr1nt/core/base/view/base_view.dart';
+import 'package:cf8tpr1nt/view/authentication/test/test_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
-
-import '../../../../core/base/state/base_state.dart';
-import '../../../../core/base/view/base_view.dart';
-import 'test_viewmodel.dart';
 
 class TestView extends StatefulWidget {
   const TestView({super.key});
@@ -19,8 +18,9 @@ class _TestViewState extends BaseState<TestView> {
     return BaseView<TestViewModel>(
       viewModel: TestViewModel(),
       onModelReady: (model) {
-        model.setContext(context);
-        model.init();
+        model
+          ..setContext(context)
+          ..init();
         viewModel = model;
       },
       builder: (context, viewModel) => buildApp,

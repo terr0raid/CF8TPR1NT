@@ -1,14 +1,13 @@
+import 'package:cf8tpr1nt/core/constants/app/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../constants/app/app_colors.dart';
-
 class AppTheme {
-  static final AppTheme _instance = AppTheme._init();
-  static AppTheme get instance => _instance;
 
   AppTheme._init();
+  static final AppTheme _instance = AppTheme._init();
+  static AppTheme get instance => _instance;
 
   static ThemeData get darkTheme => ThemeData.dark().copyWith(
         visualDensity: VisualDensity.standard,
@@ -49,7 +48,7 @@ class AppTheme {
             const FloatingActionButtonThemeData().copyWith(
           backgroundColor: AppColors.white,
           foregroundColor: AppColors.indigo,
-          elevation: 2.0,
+          elevation: 2,
         ),
       );
 
@@ -94,7 +93,7 @@ class AppTheme {
             const FloatingActionButtonThemeData().copyWith(
           backgroundColor: AppColors.indigo,
           foregroundColor: AppColors.white,
-          elevation: 2.0,
+          elevation: 2,
         ),
       );
 }
