@@ -3,6 +3,7 @@
 import 'package:cf8tpr1nt/core/base/model/base_view_model.dart';
 import 'package:cf8tpr1nt/core/constants/enums/preferences_keys.dart';
 import 'package:cf8tpr1nt/core/constants/navigation/navigation_constants.dart';
+import 'package:cf8tpr1nt/core/extensions/context_extensions.dart';
 import 'package:cf8tpr1nt/core/init/language/locale_keys.g.dart';
 import 'package:cf8tpr1nt/feature/constants/image_paths.dart';
 import 'package:cf8tpr1nt/view/authentication/onboard/model/on_board_model.dart';
@@ -15,15 +16,15 @@ part 'onboard_view_model.g.dart';
 class OnBoardViewModel = _OnBoardViewModelBase with _$OnBoardViewModel;
 
 abstract class _OnBoardViewModelBase with Store, BaseViewModel {
+  _OnBoardViewModelBase(this.pageController);
   List<OnBoardModel> onBoardItems = [];
+  PageController pageController;
 
   @observable
   int currentIndex = 0;
 
   @observable
   bool isLoading = false;
-
-  PageController pageController = PageController();
 
   @override
   void setContext(BuildContext context) => ctx = context;
@@ -60,7 +61,7 @@ abstract class _OnBoardViewModelBase with Store, BaseViewModel {
       currentIndex++;
       pageController.animateToPage(
         currentIndex,
-        duration: const Duration(milliseconds: 300),
+        duration: ctx.lowDuration,
         curve: Curves.easeInOut,
       );
     } else {
@@ -75,12 +76,15 @@ abstract class _OnBoardViewModelBase with Store, BaseViewModel {
 
   Future<void> completeToOnBoard() async {
     changeLoading();
-    await localeManager.setBoolValue(PreferencesKeys.IS_FIRST_APP, value: true);
+    await localeManager.setBoolValue(
+      PreferencesKeys.IS_FIRST_APP,
+      value: false,
+    );
     changeLoading();
-    if (navigationService.navigatorKey.currentState!.canPop()) {
-      navigationService.navigatorKey.currentState!.pop();
+    if (navigation.navigatorKey.currentState!.canPop()) {
+      navigation.navigatorKey.currentState!.pop();
     } else {
-      await navigationService.navigateToPageClear(
+      await navigation.navigateToPageClear(
         path: NavigationConstants.LOGIN_VIEW,
       );
     }

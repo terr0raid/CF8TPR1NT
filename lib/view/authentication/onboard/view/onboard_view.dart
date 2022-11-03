@@ -1,3 +1,4 @@
+import 'package:cf8tpr1nt/core/base/state/base_state.dart';
 import 'package:cf8tpr1nt/core/base/view/base_view.dart';
 import 'package:cf8tpr1nt/core/extensions/context_extensions.dart';
 import 'package:cf8tpr1nt/feature/widgets/avatar/on_board_indicator.dart';
@@ -7,18 +8,32 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:lottie/lottie.dart';
 
-class OnBoardView extends StatelessWidget {
+class OnBoardView extends StatefulWidget {
   const OnBoardView({super.key});
+
+  @override
+  State<OnBoardView> createState() => _OnBoardViewState();
+}
+
+class _OnBoardViewState extends BaseState<OnBoardView> {
+  late PageController _pageController;
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController();
+  }
+
   @override
   Widget build(BuildContext context) {
     return BaseView<OnBoardViewModel>(
-      viewModel: OnBoardViewModel(),
+      viewModel: OnBoardViewModel(_pageController),
       onModelReady: (model) {
         model
           ..setContext(context)
           ..init();
       },
       builder: buildScaffold,
+      onDispose: () => _pageController.dispose(),
     );
   }
 
@@ -35,19 +50,7 @@ class OnBoardView extends StatelessWidget {
             const Spacer(),
             Expanded(
               flex: 7,
-              child: PageView.builder(
-                itemCount: viewModel.onBoardItems.length,
-                controller: viewModel.pageController,
-                onPageChanged: (index) {
-                  viewModel.setCurrentIndex(index);
-                },
-                itemBuilder: (BuildContext context, int index) {
-                  return buildColumnBody(
-                    viewModel.onBoardItems[index],
-                    context,
-                  );
-                },
-              ),
+              child: buildPageBuilder(viewModel),
             ),
             const Spacer(),
             Expanded(child: buildBottomNav(viewModel)),
@@ -57,10 +60,26 @@ class OnBoardView extends StatelessWidget {
     );
   }
 
+  PageView buildPageBuilder(OnBoardViewModel viewModel) {
+    return PageView.builder(
+      itemCount: viewModel.onBoardItems.length,
+      controller: viewModel.pageController,
+      onPageChanged: (index) {
+        viewModel.setCurrentIndex(index);
+      },
+      itemBuilder: (BuildContext context, int index) {
+        return buildColumnBody(
+          viewModel.onBoardItems[index],
+          context,
+        );
+      },
+    );
+  }
+
   Column buildColumnBody(OnBoardModel model, BuildContext context) {
     return Column(
       children: [
-        Expanded(flex: 2, child: buildLottie(model.image, context)),
+        Expanded(flex: 2, child: buildLottie(model.image ?? '', context)),
         buildColumnContent(model, context),
       ],
     );
@@ -81,10 +100,10 @@ class OnBoardView extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        buildContentTitle(model.title, context),
+        buildContentTitle(model.title ?? '', context),
         Padding(
           padding: context.paddingMedium,
-          child: buildContentDescription(model.description, context),
+          child: buildContentDescription(model.description ?? '', context),
         ),
       ],
     );
