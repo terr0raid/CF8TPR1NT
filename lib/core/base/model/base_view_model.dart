@@ -7,7 +7,7 @@ mixin BaseViewModel {
   late BuildContext ctx;
 
   final NetworkService networkService = NetworkService.instance;
-  final NavigationService navigationService = NavigationService.instance;
+  final NavigationService navigation = NavigationService.instance;
   final LocaleManager localeManager = LocaleManager.instance;
   void setContext(BuildContext ctx);
   void init();

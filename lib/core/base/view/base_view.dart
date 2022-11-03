@@ -23,9 +23,9 @@ class _BaseViewState<T extends Store> extends State<BaseView<T>> {
   late T model;
   @override
   void initState() {
-    model = widget.viewModel;
-    widget.onModelReady(widget.viewModel);
     super.initState();
+    widget.onModelReady(widget.viewModel);
+    model = widget.viewModel;
   }
 
   @override

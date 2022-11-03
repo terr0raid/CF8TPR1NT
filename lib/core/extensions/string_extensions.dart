@@ -10,4 +10,5 @@ extension StringValidation on String {
 extension ImagePathExtension on String {
   String get toSVG => 'assets/svg/$this.svg';
   String get toLottie => 'assets/lottie/$this.json';
+  String get toPng => 'assets/images/$this.png';
 }

@@ -63,6 +63,6 @@ extension PageExtension on BuildContext {
 }
 
 extension DurationExtension on BuildContext {
-  Duration get lowDuration => const Duration(milliseconds: 500);
+  Duration get lowDuration => const Duration(milliseconds: 300);
   Duration get normalDuration => const Duration(seconds: 1);
 }
