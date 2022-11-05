@@ -55,17 +55,21 @@ class _SplashViewState extends BaseState<SplashView> {
             ),
             Expanded(
               flex: 2,
-              child: Padding(
-                padding: context.paddingNormal,
-                child: AppLogoWithText(
-                  height: dynamicHeight(0.1),
-                  width: dynamicWidth(0.3),
-                ),
-              ),
+              child: buildAppLogo,
             ),
             Expanded(flex: 2, child: buildSplashIndicator),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget get buildAppLogo {
+    return Padding(
+      padding: context.paddingNormal,
+      child: AppLogoWithText(
+        height: dynamicHeight(0.1),
+        width: dynamicWidth(0.3),
       ),
     );
   }

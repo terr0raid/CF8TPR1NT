@@ -15,6 +15,8 @@ class ImagePaths {
   //svg
   String get appLogo => 'ic_app_logo'.toSVG;
   String get textAppLogo => 'ic_text_app_logo'.toSVG;
+  String get googleLogo => 'ic_google_logo'.toSVG;
+  String get facebookLogo => 'ic_facebook_logo'.toSVG;
 
   //images
   String get loginBg => 'footprint'.toPng;
