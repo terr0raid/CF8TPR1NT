@@ -17,23 +17,25 @@
 	"splash": {
 		"welcome": "cf8tpr1nt'e hoşgeldiniz"
 	},
-	"login": {
-		"tab1": "Giriş yap",
-		"tab2": "Kayıt ol",
+	"auth": {
+		"alreadyLoggedIn": "Zaten giriş yaptınız.",
+		"google": "Google ile giriş yap",
+		"facebook": "Facebook ile giriş yap",
+		"login": "Giriş yap",
+		"register": "Kayıt ol",
 		"email": "Mail adresi",
 		"password": "Şifre",
 		"forgotPassword": "Şifremi Unuttum",
-		"login": "Giriş Yap",
-		"register": "Kayıt Ol",
-		"haveAcount": "Henüz bir hesabınız yok mu?"
+		"haveAcount": "Henüz bir hesabınız yok mu?",
+		"loginError": "Giriş yaparken bir hata oluştu. Lütfen tekrar deneyin."
 	},
 	"home": {
 		"build": {
-			"tabbar": {
-				"tab1": "Çöp Kutuları",
-				"tab2": "Ödüller",
-				"tab3": "Özetiniz",
-				"tab4": "Profil"
+			"bottomnavbar": {
+				"containers": "Konteyner",
+				"rewards": "Ödül",
+				"donation": "Bağış",
+				"profile": "Profil"
 			}
 		},
 		"settings": {

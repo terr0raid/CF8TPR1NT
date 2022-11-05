@@ -17,22 +17,25 @@
 	"splash": {
 		"welcome": "Welcome to cf8tpr1nt"
 	},
-	"login": {
-		"tab1": "Login",
-		"tab2": "Register",
+	"auth": {
+		"alreadyLoggedIn": "You are already logged in.",
+		"google": "Sign in with Google",
+		"facebook": "Sign in with Facebook",
+		"login": "Login",
+		"register": "Register",
 		"email": "Email",
 		"password": "Password",
 		"forgotPassword": "Forgot Password",
-		"login": "Login",
-		"haveAcount": "Don't have an account?"
+		"haveAcount": "Don't have an account?",
+		"loginError": "An error occurred while logging in. Please try again."
 	},
 	"home": {
 		"build": {
-			"tabbar": {
-				"tab1": "Containers",
-				"tab2": "Rewards",
-				"tab3": "Your summary",
-				"tab4": "Profile"
+			"bottomnavbar": {
+				"containers": "Containers",
+				"rewards": "Rewards",
+				"donation": "Donation",
+				"profile": "Profile"
 			}
 		},
 		"settings": {

@@ -1,8 +1,6 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-// ignore_for_file: constant_identifier_names
-
-abstract class LocaleKeys {
+abstract class  LocaleKeys {
   static const welcome = 'welcome';
   static const onBoard_page1_title = 'onBoard.page1.title';
   static const onBoard_page1_desc = 'onBoard.page1.desc';
@@ -16,24 +14,26 @@ abstract class LocaleKeys {
   static const onBoard = 'onBoard';
   static const splash_welcome = 'splash.welcome';
   static const splash = 'splash';
-  static const login_tab1 = 'login.tab1';
-  static const login_tab2 = 'login.tab2';
-  static const login_email = 'login.email';
-  static const login_password = 'login.password';
-  static const login_forgotPassword = 'login.forgotPassword';
-  static const login_login = 'login.login';
-  static const login_haveAcount = 'login.haveAcount';
-  static const login = 'login';
-  static const home_build_tabbar_tab1 = 'home.build.tabbar.tab1';
-  static const home_build_tabbar_tab2 = 'home.build.tabbar.tab2';
-  static const home_build_tabbar_tab3 = 'home.build.tabbar.tab3';
-  static const home_build_tabbar_tab4 = 'home.build.tabbar.tab4';
-  static const home_build_tabbar = 'home.build.tabbar';
+  static const auth_alreadyLoggedIn = 'auth.alreadyLoggedIn';
+  static const auth_google = 'auth.google';
+  static const auth_facebook = 'auth.facebook';
+  static const auth_login = 'auth.login';
+  static const auth_register = 'auth.register';
+  static const auth_email = 'auth.email';
+  static const auth_password = 'auth.password';
+  static const auth_forgotPassword = 'auth.forgotPassword';
+  static const auth_haveAcount = 'auth.haveAcount';
+  static const auth_loginError = 'auth.loginError';
+  static const auth = 'auth';
+  static const home_build_bottomnavbar_containers = 'home.build.bottomnavbar.containers';
+  static const home_build_bottomnavbar_rewards = 'home.build.bottomnavbar.rewards';
+  static const home_build_bottomnavbar_donation = 'home.build.bottomnavbar.donation';
+  static const home_build_bottomnavbar_profile = 'home.build.bottomnavbar.profile';
+  static const home_build_bottomnavbar = 'home.build.bottomnavbar';
   static const home_build = 'home.build';
   static const home_settings_title = 'home.settings.title';
   static const home_settings_about_title = 'home.settings.about.title';
-  static const home_settings_about_contribitions =
-      'home.settings.about.contribitions';
+  static const home_settings_about_contribitions = 'home.settings.about.contribitions';
   static const home_settings_about = 'home.settings.about';
   static const home_settings_core_title = 'home.settings.core.title';
   static const home_settings_core_themeTitle = 'home.settings.core.themeTitle';
@@ -45,4 +45,5 @@ abstract class LocaleKeys {
   static const home_settings_applicationTour = 'home.settings.applicationTour';
   static const home_settings = 'home.settings';
   static const home = 'home';
+
 }
