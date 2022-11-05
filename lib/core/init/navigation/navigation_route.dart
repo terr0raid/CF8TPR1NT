@@ -5,7 +5,7 @@ import 'package:cf8tpr1nt/view/authentication/onboard/view/onboard_view.dart';
 import 'package:cf8tpr1nt/view/authentication/splash/view/splash_view.dart';
 import 'package:cf8tpr1nt/view/home/containers/view/containers_view.dart';
 import 'package:cf8tpr1nt/view/home/donations/view/donations_view.dart';
-import 'package:cf8tpr1nt/view/home/home_view.dart';
+import 'package:cf8tpr1nt/view/home/home/view/home_view.dart';
 import 'package:cf8tpr1nt/view/home/profile/view/profile_view.dart';
 import 'package:cf8tpr1nt/view/home/rewards/view/rewards_view.dart';
 import 'package:cf8tpr1nt/view/settings/view/settings_view.dart';

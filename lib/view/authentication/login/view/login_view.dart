@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cf8tpr1nt/core/base/state/base_state.dart';
 import 'package:cf8tpr1nt/core/base/view/base_view.dart';
 import 'package:cf8tpr1nt/core/extensions/context_extensions.dart';
@@ -89,6 +90,12 @@ class _LoginViewState extends BaseState<LoginView> {
           buildGoogleButton,
           buildFacebookButton,
           SizedBox(height: context.height * 0.1),
+          ElevatedButton(
+            onPressed: () {
+              AuthRepository(FirebaseAuth.instance).signOut();
+            },
+            child: const Text('signout'),
+          ),
         ],
       ),
     );
@@ -104,7 +111,7 @@ class _LoginViewState extends BaseState<LoginView> {
         child: Observer(
           builder: (_) {
             return SizedBox(
-              width: context.width * 0.8,
+              width: context.width * 0.9,
               height: context.height * 0.08,
               child: viewModel.isGoogleLoading
                   ? Center(
@@ -137,7 +144,7 @@ class _LoginViewState extends BaseState<LoginView> {
         child: Observer(
           builder: (_) {
             return SizedBox(
-              width: context.width * 0.8,
+              width: context.width * 0.9,
               height: context.height * 0.08,
               child: viewModel.isFacebookLoading
                   ? Center(
@@ -149,7 +156,7 @@ class _LoginViewState extends BaseState<LoginView> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         buildButtonLogo(ImagePaths.instance.facebookLogo),
-                        SizedBox(width: context.width * 0.035),
+                        SizedBox(width: context.width * 0.04),
                         buildButtonText(LocaleKeys.auth_facebook),
                       ],
                     ),
@@ -175,10 +182,12 @@ class _LoginViewState extends BaseState<LoginView> {
     );
   }
 
-  Text buildButtonText(String text) {
-    return Text(
+  Widget buildButtonText(String text) {
+    return AutoSizeText(
       text.tr(),
       style: context.textTheme.headline6,
+      overflow: TextOverflow.ellipsis,
+      maxLines: 1,
     );
   }
 }
