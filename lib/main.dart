@@ -10,6 +10,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
 
 Future<void> main() async {
@@ -31,6 +32,7 @@ Future<void> main() async {
 
 Future<void> _init() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: 'assets/env/.env');
   try {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
