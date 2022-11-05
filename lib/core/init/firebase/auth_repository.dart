@@ -7,9 +7,11 @@ abstract class IAuthRepository {
   final FirebaseAuth firebaseAuth;
 
   Future<UserCredential?> signInWithGoogle();
+  Future<UserCredential?> signInWithFacebook();
   Future<void> signOut();
   User? currentUser();
   Stream<User?> get authStateChanges;
+  bool isUserLoggedIn();
 }
 
 class AuthRepository implements IAuthRepository {
@@ -18,9 +20,9 @@ class AuthRepository implements IAuthRepository {
   final FirebaseAuth firebaseAuth;
 
   @override
-  Future<UserCredential> signInWithGoogle() async {
+  Future<UserCredential?> signInWithGoogle() async {
     final googleUser = await GoogleSignIn().signIn();
-    if (googleUser == null) throw Exception('User cancelled the login process');
+    if (googleUser == null) throw Exception();
     final googleAuth = await googleUser.authentication;
     final credential = GoogleAuthProvider.credential(
       accessToken: googleAuth.accessToken,
@@ -35,7 +37,7 @@ class AuthRepository implements IAuthRepository {
               await firebaseAuth.fetchSignInMethodsForEmail(e.email!);
           if (userSignInMethods.first == 'facebook.com') {
             final userCredential = await signInWithFacebook();
-            await userCredential.user?.linkWithCredential(e.credential!);
+            await userCredential?.user?.linkWithCredential(e.credential!);
           }
         }
       }
@@ -43,16 +45,17 @@ class AuthRepository implements IAuthRepository {
     return firebaseAuth.signInWithCredential(credential);
   }
 
-  Future<UserCredential> signInWithFacebook() async {
+  @override
+  Future<UserCredential?> signInWithFacebook() async {
     final loginResult = await FacebookAuth.instance.login();
 
-    if (loginResult.accessToken == null) {
-      throw Exception('User cancelled the login process');
-    }
-    final facebookAuthCredential =
-        FacebookAuthProvider.credential(loginResult.accessToken!.token);
+    if (loginResult.status == LoginStatus.success) {
+      final facebookAuthCredential =
+          FacebookAuthProvider.credential(loginResult.accessToken!.token);
 
-    return FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
+      return FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
+    }
+    return null;
   }
 
   @override
@@ -67,4 +70,9 @@ class AuthRepository implements IAuthRepository {
 
   @override
   Stream<User?> get authStateChanges => firebaseAuth.authStateChanges();
+
+  @override
+  bool isUserLoggedIn() {
+    return firebaseAuth.currentUser != null;
+  }
 }
