@@ -11,4 +11,5 @@ mixin BaseViewModel {
   final LocaleManager localeManager = LocaleManager.instance;
   void setContext(BuildContext ctx);
   void init();
+  void dispose();
 }
