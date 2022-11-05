@@ -3,6 +3,7 @@ import 'package:cf8tpr1nt/core/constants/navigation/navigation_constants.dart';
 import 'package:cf8tpr1nt/view/authentication/login/view/login_view.dart';
 import 'package:cf8tpr1nt/view/authentication/onboard/view/onboard_view.dart';
 import 'package:cf8tpr1nt/view/authentication/splash/view/splash_view.dart';
+import 'package:cf8tpr1nt/view/home/home_view.dart';
 import 'package:flutter/material.dart';
 
 class NavigationRoute {
@@ -17,6 +18,11 @@ class NavigationRoute {
           const SplashView(),
           NavigationConstants.DEFAULT,
         );
+      case NavigationConstants.HOME_VIEW:
+        return normalNavigate(
+          const HomeView(),
+          NavigationConstants.HOME_VIEW,
+        );
       case NavigationConstants.LOGIN_VIEW:
         return normalNavigate(
           const LoginView(),
@@ -29,7 +35,7 @@ class NavigationRoute {
         );
       case NavigationConstants.CONTAINERS_VIEW:
         return normalNavigate(
-          const LoginView(),
+          const OnBoardView(),
           NavigationConstants.CONTAINERS_VIEW,
         );
       case NavigationConstants.CONTAINER_DETAIL_VIEW:

@@ -3,6 +3,7 @@ import 'package:cf8tpr1nt/core/base/view/base_view.dart';
 import 'package:cf8tpr1nt/core/extensions/context_extensions.dart';
 import 'package:cf8tpr1nt/core/init/firebase/auth_repository.dart';
 import 'package:cf8tpr1nt/feature/constants/image_paths.dart';
+import 'package:cf8tpr1nt/feature/widgets/svg/app_logo_text.dart';
 import 'package:cf8tpr1nt/view/authentication/splash/service/splash_service.dart';
 import 'package:cf8tpr1nt/view/authentication/splash/viewmodel/splash_view_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -52,26 +53,20 @@ class _SplashViewState extends BaseState<SplashView> {
             const Spacer(
               flex: 2,
             ),
-            Expanded(flex: 2, child: buildSplashLogo),
-            buildSplashText,
+            Expanded(
+              flex: 2,
+              child: Padding(
+                padding: context.paddingNormal,
+                child: AppLogoWithText(
+                  height: dynamicHeight(0.1),
+                  width: dynamicWidth(0.3),
+                ),
+              ),
+            ),
             Expanded(flex: 2, child: buildSplashIndicator),
           ],
         ),
       ),
-    );
-  }
-
-  Widget get buildSplashLogo {
-    return SvgPicture.asset(
-      ImagePaths.instance.appLogo,
-      width: dynamicHeight(0.3),
-    );
-  }
-
-  Widget get buildSplashText {
-    return SvgPicture.asset(
-      ImagePaths.instance.textAppLogo,
-      width: dynamicHeight(0.3),
     );
   }
 

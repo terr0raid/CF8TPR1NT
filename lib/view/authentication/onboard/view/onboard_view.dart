@@ -24,6 +24,12 @@ class _OnBoardViewState extends BaseState<OnBoardView> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    _pageController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return BaseView<OnBoardViewModel>(
       viewModel: OnBoardViewModel(_pageController),
@@ -33,7 +39,6 @@ class _OnBoardViewState extends BaseState<OnBoardView> {
           ..init();
       },
       builder: buildScaffold,
-      onDispose: () => _pageController.dispose(),
     );
   }
 
@@ -132,6 +137,7 @@ class _OnBoardViewState extends BaseState<OnBoardView> {
       children: <Widget>[
         buildListViewCircles(viewModel),
         FloatingActionButton(
+          heroTag: 'onBoard',
           onPressed: () {
             viewModel.nextPage();
           },

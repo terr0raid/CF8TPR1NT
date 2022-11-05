@@ -26,6 +26,9 @@ abstract class _SplashViewModelBase with Store, BaseViewModel {
     });
   }
 
+  @override
+  void dispose() {}
+
   @action
   void _changeIsLoading() => isLoading = !isLoading;
 
@@ -40,7 +43,7 @@ abstract class _SplashViewModelBase with Store, BaseViewModel {
     final isFirstApp = localeManager.getBoolValue(
       PreferencesKeys.IS_FIRST_APP,
     );
-    if (isFirstApp == null || !isFirstApp) {
+    if (isFirstApp == null || isFirstApp) {
       await navigation.navigateToPageClear(
         path: NavigationConstants.ON_BOARD_VIEW,
       );
@@ -53,7 +56,7 @@ abstract class _SplashViewModelBase with Store, BaseViewModel {
     final currentUser = splashService.getCurrentUser();
     if (currentUser != null) {
       navigation.navigateToPageClear(
-        path: NavigationConstants.CONTAINERS_VIEW,
+        path: NavigationConstants.HOME_VIEW,
       );
     } else {
       navigation.navigateToPageClear(

@@ -52,6 +52,9 @@ abstract class _OnBoardViewModelBase with Store, BaseViewModel {
     );
   }
 
+  @override
+  void dispose() {}
+
   @action
   void setCurrentIndex(int index) => currentIndex = index;
 

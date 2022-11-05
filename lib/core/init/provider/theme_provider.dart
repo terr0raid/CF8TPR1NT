@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 class ThemeProvider extends ChangeNotifier {
   ThemeData _currentTheme = AppTheme.lightTheme;
 
-  AppThemes _currentThemeEnum = AppThemes.LIGHT;
+  AppThemesEnum _currentThemeEnum = AppThemesEnum.LIGHT;
 
-  AppThemes get currentThemeEnum => _currentThemeEnum;
+  AppThemesEnum get currentThemeEnum => _currentThemeEnum;
 
   ThemeData get currentTheme => _currentTheme;
 
-  void changeValue(AppThemes theme) {
-    if (theme == AppThemes.LIGHT) {
+  void setTheme(AppThemesEnum theme) {
+    if (theme == AppThemesEnum.LIGHT) {
       _currentTheme = AppTheme.lightTheme;
     } else {
       _currentTheme = AppTheme.darkTheme;
@@ -21,12 +21,12 @@ class ThemeProvider extends ChangeNotifier {
   }
 
   void changeTheme() {
-    if (_currentThemeEnum == AppThemes.LIGHT) {
+    if (_currentThemeEnum == AppThemesEnum.LIGHT) {
       _currentTheme = AppTheme.darkTheme;
-      _currentThemeEnum = AppThemes.DARK;
+      _currentThemeEnum = AppThemesEnum.DARK;
     } else {
       _currentTheme = AppTheme.lightTheme;
-      _currentThemeEnum = AppThemes.LIGHT;
+      _currentThemeEnum = AppThemesEnum.LIGHT;
     }
     notifyListeners();
   }

@@ -1,6 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
-enum AppThemes {
+enum AppThemesEnum {
   LIGHT,
   DARK,
 }

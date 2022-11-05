@@ -2,6 +2,7 @@
 
 class NavigationConstants {
   static const DEFAULT = '/';
+  static const HOME_VIEW = '/home';
   static const LOGIN_VIEW = '/login';
   static const ON_BOARD_VIEW = '/onboard';
   static const CONTAINERS_VIEW = '/containers';
