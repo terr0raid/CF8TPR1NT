@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:cf8tpr1nt/core/base/model/base_view_model.dart';
 import 'package:cf8tpr1nt/core/extensions/context_extensions.dart';
 import 'package:cf8tpr1nt/feature/enums/home_navbar.dart';
@@ -21,11 +20,7 @@ abstract class _HomeViewModelBase with Store, BaseViewModel {
   @override
   void dispose() {}
 
-  List<PageRouteInfo> get buildRoutes {
-    return NavbarTab.values.map((e) => e.routes).toList();
-  }
-
-  List<Widget> get screens {
+  List<Widget> get buildScreens {
     return NavbarTab.values.map((e) => e.page).toList();
   }
 

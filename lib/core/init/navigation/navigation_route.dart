@@ -3,7 +3,12 @@ import 'package:cf8tpr1nt/core/constants/navigation/navigation_constants.dart';
 import 'package:cf8tpr1nt/view/authentication/login/view/login_view.dart';
 import 'package:cf8tpr1nt/view/authentication/onboard/view/onboard_view.dart';
 import 'package:cf8tpr1nt/view/authentication/splash/view/splash_view.dart';
+import 'package:cf8tpr1nt/view/home/containers/view/containers_view.dart';
+import 'package:cf8tpr1nt/view/home/donations/view/donations_view.dart';
 import 'package:cf8tpr1nt/view/home/home_view.dart';
+import 'package:cf8tpr1nt/view/home/profile/view/profile_view.dart';
+import 'package:cf8tpr1nt/view/home/rewards/view/rewards_view.dart';
+import 'package:cf8tpr1nt/view/settings/view/settings_view.dart';
 import 'package:flutter/material.dart';
 
 class NavigationRoute {
@@ -35,42 +40,42 @@ class NavigationRoute {
         );
       case NavigationConstants.CONTAINERS_VIEW:
         return normalNavigate(
-          const OnBoardView(),
+          const ContainersView(),
           NavigationConstants.CONTAINERS_VIEW,
         );
-      case NavigationConstants.CONTAINER_DETAIL_VIEW:
-        return normalNavigate(
-          const LoginView(),
-          NavigationConstants.CONTAINER_DETAIL_VIEW,
-        );
+      // case NavigationConstants.CONTAINER_DETAIL_VIEW:
+      //   return normalNavigate(
+      //     const LoginView(),
+      //     NavigationConstants.CONTAINER_DETAIL_VIEW,
+      //   );
       case NavigationConstants.REWARDS_VIEW:
         return normalNavigate(
-          const LoginView(),
+          const RewardsView(),
           NavigationConstants.REWARDS_VIEW,
         );
-      case NavigationConstants.REWARD_DETAIL_VIEW:
-        return normalNavigate(
-          const LoginView(),
-          NavigationConstants.REWARD_DETAIL_VIEW,
-        );
+      // case NavigationConstants.REWARD_DETAIL_VIEW:
+      //   return normalNavigate(
+      //     const LoginView(),
+      //     NavigationConstants.REWARD_DETAIL_VIEW,
+      //   );
       case NavigationConstants.DONATION_VIEW:
         return normalNavigate(
-          const LoginView(),
+          const DonationsView(),
           NavigationConstants.DONATION_VIEW,
         );
-      case NavigationConstants.DONATION_DETAIL_VIEW:
-        return normalNavigate(
-          const LoginView(),
-          NavigationConstants.DONATION_DETAIL_VIEW,
-        );
+      // case NavigationConstants.DONATION_DETAIL_VIEW:
+      //   return normalNavigate(
+      //     const LoginView(),
+      //     NavigationConstants.DONATION_DETAIL_VIEW,
+      //   );
       case NavigationConstants.PROFILE_VIEW:
         return normalNavigate(
-          const LoginView(),
+          const ProfileView(),
           NavigationConstants.PROFILE_VIEW,
         );
       case NavigationConstants.SETTINGS_VIEW:
         return normalNavigate(
-          const LoginView(),
+          const SettingsView(),
           NavigationConstants.SETTINGS_VIEW,
         );
       default:

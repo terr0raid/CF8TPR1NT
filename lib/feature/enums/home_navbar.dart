@@ -4,6 +4,10 @@ import 'package:cf8tpr1nt/core/constants/navigation/navigation_constants.dart';
 import 'package:cf8tpr1nt/core/init/language/locale_keys.g.dart';
 import 'package:cf8tpr1nt/view/authentication/login/view/login_view.dart';
 import 'package:cf8tpr1nt/view/authentication/onboard/view/onboard_view.dart';
+import 'package:cf8tpr1nt/view/home/containers/view/containers_view.dart';
+import 'package:cf8tpr1nt/view/home/donations/view/donations_view.dart';
+import 'package:cf8tpr1nt/view/home/profile/view/profile_view.dart';
+import 'package:cf8tpr1nt/view/home/rewards/view/rewards_view.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -44,13 +48,13 @@ extension NavbarTabExtension on NavbarTab {
   Widget get page {
     switch (this) {
       case NavbarTab.CONTAINER:
-        return const OnBoardView();
+        return const ContainersView();
       case NavbarTab.REWARDS:
-        return const LoginView();
+        return const RewardsView();
       case NavbarTab.DONATION:
-        return const OnBoardView();
+        return const DonationsView();
       case NavbarTab.PROFILE:
-        return const OnBoardView();
+        return const ProfileView();
     }
   }
 

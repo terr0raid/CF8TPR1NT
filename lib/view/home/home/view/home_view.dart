@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:cf8tpr1nt/core/base/view/base_view.dart';
 import 'package:cf8tpr1nt/core/extensions/context_extensions.dart';
 import 'package:cf8tpr1nt/view/home/home/viewmodel/home_view_model.dart';
@@ -26,51 +25,21 @@ class HomeView extends StatelessWidget {
 
   Widget buildHomeBody(BuildContext context, HomeViewModel viewModel) {
     return SafeArea(
-      child: AutoTabsScaffold(
-        routes: viewModel.buildRoutes,
-        bottomNavigationBuilder: (_, tabsRouter) {
-          return BottomNavigationBar(
-            backgroundColor: context.colors.error,
-            selectedItemColor: Colors.amber,
-            unselectedItemColor: Colors.black,
-            currentIndex: tabsRouter.activeIndex,
-            onTap: tabsRouter.setActiveIndex,
-            items: const [
-              BottomNavigationBarItem(
-                label: 'Users',
-                icon: Icon(Icons.person),
-              ),
-              BottomNavigationBarItem(
-                label: 'Posts',
-                icon: Icon(Icons.person),
-              ),
-              BottomNavigationBarItem(
-                label: 'Settings',
-                icon: Icon(Icons.person),
-              ),
-              BottomNavigationBarItem(
-                label: 'Settings2',
-                icon: Icon(Icons.person),
-              ),
-            ],
-          );
-          // PersistentTabView(
-          //   context,
-          //   screens: viewModel.screens,
-          //   items: viewModel.navBarItems,
-          //   resizeToAvoidBottomInset: true,
-          //   decoration: NavBarDecoration(
-          //     border: Border(
-          //       top: BorderSide(color: context.colors.primary, width: 0.5),
-          //     ),
-          //   ),
-          //   itemAnimationProperties: ItemAnimationProperties(
-          //     duration: context.lowDuration,
-          //     curve: Curves.ease,
-          //   ),
-          //   navBarStyle: NavBarStyle.style9,
-          // );
-        },
+      child: PersistentTabView(
+        context,
+        screens: viewModel.buildScreens,
+        items: viewModel.navBarItems,
+        resizeToAvoidBottomInset: true,
+        decoration: NavBarDecoration(
+          border: Border(
+            top: BorderSide(color: context.colors.primary, width: 0.5),
+          ),
+        ),
+        itemAnimationProperties: ItemAnimationProperties(
+          duration: context.lowDuration,
+          curve: Curves.ease,
+        ),
+        navBarStyle: NavBarStyle.style9,
       ),
     );
   }
