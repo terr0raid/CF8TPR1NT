@@ -86,7 +86,7 @@
 		"windows/**/*.[Cc]ache": true,
 		"windows/**/*.[Cc]ache/": false,
 		"ios": true,
-		"android": true,
+		// "android": true,
 		"macos": true,
 		"linux": true,
 		"web": true,
