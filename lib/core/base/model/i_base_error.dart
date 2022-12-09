@@ -1,5 +1,7 @@
-abstract class IBaseError {
-
-  IBaseError(this.message);
-  final String message;
+abstract class IBaseError extends Error {
+  IBaseError(this.message, this.code);
+  final String? message;
+  final String? code;
+  @override
+  String toString();
 }
