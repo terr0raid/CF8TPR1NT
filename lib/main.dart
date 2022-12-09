@@ -32,6 +32,10 @@ Future<void> main() async {
 
 Future<void> _init() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setEnabledSystemUIMode(
+    SystemUiMode.manual,
+    overlays: SystemUiOverlay.values,
+  );
   await dotenv.load(fileName: 'assets/env/.env');
   try {
     await Firebase.initializeApp(
