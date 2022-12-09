@@ -2,8 +2,11 @@ import 'dart:async';
 
 import 'package:cf8tpr1nt/core/base/state/base_state.dart';
 import 'package:cf8tpr1nt/core/base/view/base_view.dart';
+import 'package:cf8tpr1nt/core/init/firebase/firebase_service.dart';
+import 'package:cf8tpr1nt/view/home/containers/service/containers_service.dart';
 import 'package:cf8tpr1nt/view/home/containers/viewmodel/containers_view_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class ContainersView extends StatefulWidget {
@@ -26,7 +29,10 @@ class _ContainersViewState extends BaseState<ContainersView> {
   @override
   Widget build(BuildContext context) {
     return BaseView(
-      viewModel: ContainersViewModel(_controller),
+      viewModel: ContainersViewModel(
+        _controller,
+        ContainersService(FirebaseService.instance),
+      ),
       builder: (context, viewModel) => buildContainersBody,
       onModelReady: (model) {
         viewModel = model;
@@ -40,18 +46,27 @@ class _ContainersViewState extends BaseState<ContainersView> {
 
   Widget get buildContainersBody {
     return Scaffold(
-      body: GoogleMap(
-        initialCameraPosition: const CameraPosition(
-          target: LatLng(37.42796133580664, -122.085749655962),
-          zoom: 14.4746,
-        ),
-        onMapCreated: viewModel.controller.complete,
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-        heroTag: 'containerFAB',
-        onPressed: () {},
-        label: const Text('To the lake!'),
-        icon: const Icon(Icons.directions_boat),
+      body: Observer(
+        builder: (_) {
+          return Stack(
+            children: [
+              GoogleMap(
+                initialCameraPosition: const CameraPosition(
+                  target: LatLng(38.02162663442264, 32.512445225112366),
+                  zoom: 15,
+                ),
+                onMapCreated: viewModel.controller.complete,
+                markers: viewModel.markers,
+              ),
+              Center(
+                child: Visibility(
+                  visible: viewModel.isLoading,
+                  child: const CircularProgressIndicator(),
+                ),
+              ),
+            ],
+          );
+        },
       ),
     );
   }
