@@ -29,4 +29,15 @@ class NavigationService implements INavigationService {
       arguments: arguments,
     );
   }
+
+  @override
+  void navigatePop() {
+    return navigatorKey.currentState!.pop();
+  }
+
+  @override
+  T? getRouteArgs<T>() {
+    final settings = ModalRoute.of(navigatorKey.currentContext!)!.settings;
+    return settings.arguments as T;
+  }
 }

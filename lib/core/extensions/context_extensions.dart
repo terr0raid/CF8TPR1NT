@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 extension ContextExtension on BuildContext {
   MediaQueryData get mediaQuery => MediaQuery.of(this);
+  RouteSettings get routeSettings => ModalRoute.of(this)!.settings;
 }
 
 extension MediaQueryExtension on BuildContext {
@@ -64,5 +65,7 @@ extension PageExtension on BuildContext {
 
 extension DurationExtension on BuildContext {
   Duration get lowDuration => const Duration(milliseconds: 300);
-  Duration get normalDuration => const Duration(seconds: 1);
+  Duration get normalDuration => const Duration(milliseconds: 500);
+  Duration get overDuration => const Duration(milliseconds: 800);
+  Duration get highDuration => const Duration(seconds: 1);
 }

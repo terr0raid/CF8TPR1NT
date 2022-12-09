@@ -4,4 +4,6 @@ abstract class INavigationService {
     required String path,
     Object? arguments,
   });
+  void navigatePop();
+  T? getRouteArgs<T>();
 }

@@ -7,7 +7,10 @@ import 'package:cf8tpr1nt/view/home/containers/view/containers_view.dart';
 import 'package:cf8tpr1nt/view/home/donations/view/donations_view.dart';
 import 'package:cf8tpr1nt/view/home/home/view/home_view.dart';
 import 'package:cf8tpr1nt/view/home/profile/view/profile_view.dart';
+import 'package:cf8tpr1nt/view/home/rewards/model/reward_model.dart';
+import 'package:cf8tpr1nt/view/home/rewards/rewards_detail/view/rewards_detail_view.dart';
 import 'package:cf8tpr1nt/view/home/rewards/view/rewards_view.dart';
+import 'package:cf8tpr1nt/view/home/startthrow/view/start_throw_view.dart';
 import 'package:cf8tpr1nt/view/settings/view/settings_view.dart';
 import 'package:flutter/material.dart';
 
@@ -53,11 +56,12 @@ class NavigationRoute {
           const RewardsView(),
           NavigationConstants.REWARDS_VIEW,
         );
-      // case NavigationConstants.REWARD_DETAIL_VIEW:
-      //   return normalNavigate(
-      //     const LoginView(),
-      //     NavigationConstants.REWARD_DETAIL_VIEW,
-      //   );
+      case NavigationConstants.REWARD_DETAIL_VIEW:
+        return normalNavigate(
+          const RewardsDetailView(),
+          NavigationConstants.REWARD_DETAIL_VIEW,
+          args: args.arguments! as RewardModel,
+        );
       case NavigationConstants.DONATION_VIEW:
         return normalNavigate(
           const DonationsView(),
@@ -68,6 +72,11 @@ class NavigationRoute {
       //     const LoginView(),
       //     NavigationConstants.DONATION_DETAIL_VIEW,
       //   );
+      case NavigationConstants.START_THROW_VIEW:
+        return normalNavigate(
+          const StartThrowView(),
+          NavigationConstants.START_THROW_VIEW,
+        );
       case NavigationConstants.PROFILE_VIEW:
         return normalNavigate(
           const ProfileView(),
@@ -86,10 +95,17 @@ class NavigationRoute {
   }
 
   //normal navigate function // in case i need a different route animation
-  MaterialPageRoute<dynamic> normalNavigate(Widget widget, String pageName) {
+  MaterialPageRoute<dynamic> normalNavigate(
+    Widget widget,
+    String pageName, {
+    Object? args,
+  }) {
     return MaterialPageRoute(
       builder: (context) => widget,
-      settings: RouteSettings(name: pageName),
+      settings: RouteSettings(
+        name: pageName,
+        arguments: args,
+      ),
     );
   }
 }
