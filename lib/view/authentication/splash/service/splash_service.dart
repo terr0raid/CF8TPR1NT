@@ -22,6 +22,6 @@ class SplashService extends ISplashService {
 
   @override
   User? getCurrentUser() {
-    return authRepository.currentUser();
+    return authRepository.currentUser;
   }
 }

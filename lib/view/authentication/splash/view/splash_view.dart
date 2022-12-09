@@ -2,7 +2,7 @@ import 'package:cf8tpr1nt/core/base/state/base_state.dart';
 import 'package:cf8tpr1nt/core/base/view/base_view.dart';
 import 'package:cf8tpr1nt/core/extensions/context_extensions.dart';
 import 'package:cf8tpr1nt/core/init/firebase/auth_repository.dart';
-import 'package:cf8tpr1nt/feature/widgets/svg/app_logo_text.dart';
+import 'package:cf8tpr1nt/feature/widgets/svg/app_text_logo.dart';
 import 'package:cf8tpr1nt/view/authentication/splash/service/splash_service.dart';
 import 'package:cf8tpr1nt/view/authentication/splash/viewmodel/splash_view_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -65,7 +65,7 @@ class _SplashViewState extends BaseState<SplashView> {
   Widget get buildAppLogo {
     return Padding(
       padding: context.paddingNormal,
-      child: AppLogoWithText(
+      child: AppTextLogo(
         height: dynamicHeight(0.1),
         width: dynamicWidth(0.3),
       ),
