@@ -9,7 +9,7 @@ abstract class IAuthRepository {
   Future<UserCredential?> signInWithGoogle();
   Future<UserCredential?> signInWithFacebook();
   Future<void> signOut();
-  User? currentUser();
+  User? get currentUser;
   Stream<User?> get authStateChanges;
   bool isUserLoggedIn();
 }
@@ -64,7 +64,7 @@ class AuthRepository implements IAuthRepository {
   }
 
   @override
-  User? currentUser() {
+  User? get currentUser {
     return firebaseAuth.currentUser;
   }
 
