@@ -2,17 +2,17 @@
 
 import 'package:cf8tpr1nt/core/constants/navigation/navigation_constants.dart';
 import 'package:cf8tpr1nt/core/init/language/locale_keys.g.dart';
-import 'package:cf8tpr1nt/view/authentication/login/view/login_view.dart';
-import 'package:cf8tpr1nt/view/authentication/onboard/view/onboard_view.dart';
 import 'package:cf8tpr1nt/view/home/containers/view/containers_view.dart';
 import 'package:cf8tpr1nt/view/home/donations/view/donations_view.dart';
 import 'package:cf8tpr1nt/view/home/profile/view/profile_view.dart';
 import 'package:cf8tpr1nt/view/home/rewards/view/rewards_view.dart';
+import 'package:cf8tpr1nt/view/home/startthrow/view/start_throw_view.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 enum NavbarTab {
   CONTAINER,
+  START_THROW,
   REWARDS,
   DONATION,
   PROFILE,
@@ -23,6 +23,8 @@ extension NavbarTabExtension on NavbarTab {
     switch (this) {
       case NavbarTab.CONTAINER:
         return LocaleKeys.home_build_bottomnavbar_containers.tr();
+      case NavbarTab.START_THROW:
+        return LocaleKeys.home_build_bottomnavbar_startThrow.tr();
       case NavbarTab.REWARDS:
         return LocaleKeys.home_build_bottomnavbar_rewards.tr();
       case NavbarTab.DONATION:
@@ -36,6 +38,8 @@ extension NavbarTabExtension on NavbarTab {
     switch (this) {
       case NavbarTab.CONTAINER:
         return Icons.travel_explore;
+      case NavbarTab.START_THROW:
+        return Icons.takeout_dining;
       case NavbarTab.REWARDS:
         return Icons.card_giftcard;
       case NavbarTab.DONATION:
@@ -49,6 +53,8 @@ extension NavbarTabExtension on NavbarTab {
     switch (this) {
       case NavbarTab.CONTAINER:
         return const ContainersView();
+      case NavbarTab.START_THROW:
+        return const StartThrowView();
       case NavbarTab.REWARDS:
         return const RewardsView();
       case NavbarTab.DONATION:
@@ -62,6 +68,8 @@ extension NavbarTabExtension on NavbarTab {
     switch (this) {
       case NavbarTab.CONTAINER:
         return NavigationConstants.CONTAINERS_VIEW;
+      case NavbarTab.START_THROW:
+        return NavigationConstants.START_THROW_VIEW;
       case NavbarTab.REWARDS:
         return NavigationConstants.REWARDS_VIEW;
       case NavbarTab.DONATION:
