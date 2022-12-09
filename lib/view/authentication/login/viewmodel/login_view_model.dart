@@ -1,9 +1,10 @@
-// ignore_for_file: library_private_types_in_public_api, use_build_context_synchronously, lines_longer_than_80_chars
+// ignore_for_file: libr
 
 import 'package:cf8tpr1nt/core/base/model/base_view_model.dart';
 import 'package:cf8tpr1nt/core/constants/navigation/navigation_constants.dart';
 import 'package:cf8tpr1nt/core/extensions/context_extensions.dart';
 import 'package:cf8tpr1nt/core/init/language/locale_keys.g.dart';
+import 'package:cf8tpr1nt/feature/model/error_model.dart';
 import 'package:cf8tpr1nt/view/authentication/login/service/login_service.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -30,7 +31,7 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
   @override
   void dispose() {}
 
-  Future<void> googleSignIn() async {
+  Future<CustomError?> googleSignIn() async {
     _changeGoogleLoading();
     await _checkNavigation();
     final response = await loginService.googleSignIn();
@@ -40,11 +41,12 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
         path: NavigationConstants.HOME_VIEW,
       );
     } else {
-      ctx.showSnackBar(LocaleKeys.auth_loginError.tr());
+      return CustomError(LocaleKeys.auth_loginError.tr(), 'Google');
     }
+    return null;
   }
 
-  Future<void> facebookSignIn() async {
+  Future<CustomError?> facebookSignIn() async {
     _changeFacebookLoading();
     await _checkNavigation();
     final response = await loginService.facebookSignIn();
@@ -54,8 +56,9 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
         path: NavigationConstants.HOME_VIEW,
       );
     } else {
-      ctx.showSnackBar(LocaleKeys.auth_loginError.tr());
+      return CustomError(LocaleKeys.auth_loginError.tr(), 'Facebook');
     }
+    return null;
   }
 
   @action

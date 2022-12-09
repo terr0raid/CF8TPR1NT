@@ -1,11 +1,13 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cf8tpr1nt/core/base/state/base_state.dart';
 import 'package:cf8tpr1nt/core/base/view/base_view.dart';
+import 'package:cf8tpr1nt/core/base/widgets/buttons/login_button_with_icon.dart';
 import 'package:cf8tpr1nt/core/extensions/context_extensions.dart';
 import 'package:cf8tpr1nt/core/init/firebase/auth_repository.dart';
 import 'package:cf8tpr1nt/core/init/language/locale_keys.g.dart';
 import 'package:cf8tpr1nt/feature/constants/image_paths.dart';
-import 'package:cf8tpr1nt/feature/widgets/svg/app_logo_text.dart';
+import 'package:cf8tpr1nt/feature/model/error_model.dart';
+import 'package:cf8tpr1nt/feature/widgets/svg/app_text_logo.dart';
 import 'package:cf8tpr1nt/view/authentication/login/service/login_service.dart';
 import 'package:cf8tpr1nt/view/authentication/login/viewmodel/login_view_model.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -81,7 +83,7 @@ class _LoginViewState extends BaseState<LoginView> {
           const Spacer(),
           Padding(
             padding: context.paddingNormal,
-            child: AppLogoWithText(
+            child: AppTextLogo(
               height: dynamicHeight(0.1),
               width: dynamicWidth(0.3),
             ),
@@ -104,32 +106,27 @@ class _LoginViewState extends BaseState<LoginView> {
   Widget get buildGoogleButton {
     return Padding(
       padding: context.paddingLow,
-      child: ElevatedButton(
-        onPressed: () {
-          viewModel.googleSignIn();
+      child: Observer(
+        builder: (_) {
+          return LoginButtonWithIcon(
+            size: Size(context.width * 0.85, context.height * 0.07),
+            label: buildButtonText(LocaleKeys.auth_google.tr()),
+            icon: SvgPicture.asset(
+              ImagePaths.instance.googleLogo,
+              height: dynamicHeight(0.04),
+            ),
+            onPressed: () {
+              try {
+                viewModel.googleSignIn();
+              } on CustomError catch (e) {
+                context.showSnackBar(
+                  e.message ?? LocaleKeys.auth_loginError.tr(),
+                );
+              }
+            },
+            isLoading: viewModel.isGoogleLoading,
+          );
         },
-        child: Observer(
-          builder: (_) {
-            return SizedBox(
-              width: context.width * 0.9,
-              height: context.height * 0.08,
-              child: viewModel.isGoogleLoading
-                  ? Center(
-                      child: CircularProgressIndicator(
-                        color: context.colors.primary,
-                      ),
-                    )
-                  : Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        buildButtonLogo(ImagePaths.instance.googleLogo),
-                        SizedBox(width: context.width * 0.04),
-                        buildButtonText(LocaleKeys.auth_google),
-                      ],
-                    ),
-            );
-          },
-        ),
       ),
     );
   }
@@ -137,32 +134,27 @@ class _LoginViewState extends BaseState<LoginView> {
   Widget get buildFacebookButton {
     return Padding(
       padding: context.paddingLow,
-      child: ElevatedButton(
-        onPressed: () {
-          viewModel.facebookSignIn();
+      child: Observer(
+        builder: (_) {
+          return LoginButtonWithIcon(
+            size: Size(context.width * 0.85, context.height * 0.07),
+            label: buildButtonText(LocaleKeys.auth_facebook.tr()),
+            icon: SvgPicture.asset(
+              ImagePaths.instance.facebookLogo,
+              height: dynamicHeight(0.04),
+            ),
+            onPressed: () {
+              try {
+                viewModel.facebookSignIn();
+              } on CustomError catch (e) {
+                context.showSnackBar(
+                  e.message ?? LocaleKeys.auth_loginError.tr(),
+                );
+              }
+            },
+            isLoading: viewModel.isFacebookLoading,
+          );
         },
-        child: Observer(
-          builder: (_) {
-            return SizedBox(
-              width: context.width * 0.9,
-              height: context.height * 0.08,
-              child: viewModel.isFacebookLoading
-                  ? Center(
-                      child: CircularProgressIndicator(
-                        color: context.colors.primary,
-                      ),
-                    )
-                  : Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        buildButtonLogo(ImagePaths.instance.facebookLogo),
-                        SizedBox(width: context.width * 0.04),
-                        buildButtonText(LocaleKeys.auth_facebook),
-                      ],
-                    ),
-            );
-          },
-        ),
       ),
     );
   }
@@ -188,6 +180,7 @@ class _LoginViewState extends BaseState<LoginView> {
       style: context.textTheme.headline6,
       overflow: TextOverflow.ellipsis,
       maxLines: 1,
+      textAlign: TextAlign.center,
     );
   }
 }
