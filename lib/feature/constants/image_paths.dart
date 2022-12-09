@@ -20,4 +20,8 @@ class ImagePaths {
 
   //images
   String get loginBg => 'footprint'.toPng;
+  String get temaLogo => 'ic_tema'.toPng;
+  String get tskmehmetcikLogo => 'ic_tsk_mehmetcik_vakfi'.toPng;
+  String get tskgvLogo => 'ic_tskgv'.toPng;
+  String get thrashLogo => 'ic_thrash'.toPng;
 }

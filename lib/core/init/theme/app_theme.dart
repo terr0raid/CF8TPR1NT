@@ -14,11 +14,17 @@ class AppTheme {
       ).copyWith(
         visualDensity: VisualDensity.standard,
         appBarTheme: const AppBarTheme().copyWith(
-          systemOverlayStyle: SystemUiOverlayStyle.light,
+          systemOverlayStyle: SystemUiOverlayStyle.dark,
           elevation: 1,
         ),
         colorScheme: darkColorScheme,
-        textTheme: GoogleFonts.ralewayTextTheme().copyWith(),
+        textTheme: GoogleFonts.ralewayTextTheme().copyWith(
+          subtitle2: GoogleFonts.raleway(
+            color: darkColorScheme.onBackground,
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
         floatingActionButtonTheme:
             const FloatingActionButtonThemeData().copyWith(
           elevation: 2,
@@ -30,7 +36,7 @@ class AppTheme {
       ).copyWith(
         visualDensity: VisualDensity.standard,
         appBarTheme: const AppBarTheme().copyWith(
-          systemOverlayStyle: SystemUiOverlayStyle.dark,
+          systemOverlayStyle: SystemUiOverlayStyle.light,
           elevation: 1,
         ),
         colorScheme: lightColorScheme,
