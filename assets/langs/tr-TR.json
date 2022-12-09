@@ -3,7 +3,7 @@
 	"onBoard": {
 		"page1": {
 			"title": "Hoşgeldiniz!",
-			"desc": "Dünyayı güzelleştirmek istediğinizi biliyoruz ve bu yüzden hoşgeldiniz."
+			"desc": "Dünyayı güzelleştirmek istediğinizi biliyoruz, hoşgeldiniz."
 		},
 		"page2": {
 			"title": "Ne için kullanılır?",
@@ -33,26 +33,82 @@
 		"build": {
 			"bottomnavbar": {
 				"containers": "Konteyner",
+				"startThrow": "Atık At",
 				"rewards": "Ödül",
 				"donation": "Bağış",
 				"profile": "Profil"
 			}
 		},
-		"settings": {
-			"title": "Ayarlar",
-			"about": {
-				"title": "Proje Hakkında",
-				"contribitions": "Proje katkıları"
-			},
-			"core": {
-				"title": "Temel Ayarlar",
-				"themeTitle": "Temayı değiştir",
-				"themeDesc": "Uygulamanın temasını değiştirmek için kullanılır.",
-				"langTitle": "Dili değiştir",
-				"langDesc": "Uygulamanın dilini değiştirmek için kullanılır."
-			},
-			"exit": "Çıkış Yap",
-			"applicationTour": "Uygulama turu"
+		"startThrow": {
+			"appBarTitle": "Atık At",
+			"title": "Bu sayfayı kullanarak atık maddelerinizi atabilirsiniz.",
+			"desc": "Atık maddelerinizi uygulama üzerinden bulacağınız en yakın atık kutularına atın ve puanlar kazanın.",
+			"button": "Atık At",
+			"dialogTitle": "Bluetooth cihazına bağlanmanız gerekmektedir.",
+			"dialogDesc": "Çöpleriniz atmak için telefonunuzu konteyner içerisinde bulunan Bluetooth cihazına bağlamanız gerekmektedir. Bu zararlı bir işlem değildir, yalnızca çöplerinizi kategorize etmek için kullanılan bir kamera içindir.",
+			"dialogButton": "Bağlan",
+			"dialogButton2": "Bluetooth aç",
+			"dialogCancel": "İptal et"
+		},
+		"containers": {
+			"appBarTitle": "Konteynerler"
+		},
+		"rewards": {
+			"appBarTitle": "Ödüller",
+			"categories": {
+				"book": "Kitap",
+				"gift": "Hediye",
+				"electronics": "Elektronik"
+			}
+		},
+		"donation": {
+			"appBarTitle": "Bağış Kurumları",
+			"institutions": {
+				"tskgv": {
+					"name": "Türk silahlı kuvvetlerini güçlendirme vakfı",
+					"type": "Sivil Toplum Kuruluşu",
+					"establishment": "1987",
+					"description": "Türk Silahlı Kuvvetlerini Güçlendirme Vakfı’nın amacı, 3388 sayılı Kanun ile; “Milli harp sanayimizin geliştirilmesi, yeni harp sanayi dallarının kurulması, harp silah, araç ve gereçlerinin satın alınması suretiyle Türk Silahlı Kuvvetleri’nin savaş gücünün artırılmasına katkıda bulunmak üzere milletimizin maddi ve manevi desteğini sağlamak” olarak belirlenmiştir."
+				},
+				"tema": {
+					"name": "TEMA",
+					"type": "Sivil Toplum Kuruluşu",
+					"establishment": "1992",
+					"description": "Türkiye Erozyonla Mücadele Ağaçlandırma ve Doğal Varlıkları Koruma Vakfı ya da kısaca TEMA, 11 Eylül 1992 tarihinde İstanbul'da kurulmuş olan çevreci bir vakıftır.Erozyon ile mücadele, ağaçlandırma ve doğal varlıkların korunması temel amaçlarındandır. Doğa koruma alanında Türkiye'nin en yaygın sivil toplum örgütü olarak da bilinir."
+				},
+				"tskmv": {
+					"name": "Türk silahlı kuvvetleri Mehmetçik vakfı",
+					"type": "Sivil Toplum Kuruluşu",
+					"establishment": "1982",
+					"description": "Türk Silahlı Kuvvetleri Mehmetçik Vakfı, ülkemizin ve milletimizin güvenliği için canlarını hiçe sayarak görev yapan erbaş ve erlerimizden şehit olan veya herhangi bir nedenle hayatını kaybedenlerin bakmakla yükümlü oldukları yakınları ile gazi ve engelli Mehmetçiklere sosyal ve ekonomik destek sağlamak amacıyla 17 Mayıs 1982 tarihinde kurulmuştur."
+				}
+			}
+		},
+		"profile": {
+			"appBarTitle": "Profil",
+			"logout": "Çıkış Yap",
+			"logoutConfirm": "Çıkış yapmak istediğinize emin misiniz?",
+			"logoutConfirmYes": "Evet",
+			"logoutConfirmNo": "Hayır",
+			"logoutSuccess": "Başarıyla çıkış yapıldı.",
+			"logoutError": "Çıkış yaparken bir sorun oluştu. Lütfen tekrar deneyin.",
+			"points": "{} puanınız var"
 		}
+	},
+	"settings": {
+		"title": "Ayarlar",
+		"about": {
+			"title": "Proje Hakkında",
+			"contribitions": "Proje katkıları"
+		},
+		"core": {
+			"title": "Temel Ayarlar",
+			"themeTitle": "Temayı değiştir",
+			"themeDesc": "Uygulamanın temasını değiştirmek için kullanılır.",
+			"langTitle": "Dili değiştir",
+			"langDesc": "Uygulamanın dilini değiştirmek için kullanılır."
+		},
+		"exit": "Çıkış Yap",
+		"applicationTour": "Uygulama turu"
 	}
 }

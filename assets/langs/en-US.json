@@ -33,26 +33,82 @@
 		"build": {
 			"bottomnavbar": {
 				"containers": "Containers",
+				"startThrow": "Start Throw",
 				"rewards": "Rewards",
 				"donation": "Donation",
 				"profile": "Profile"
 			}
 		},
-		"settings": {
-			"title": "Settings",
-			"about": {
-				"title": "About Project",
-				"contribitions": "Project Contributors"
-			},
-			"core": {
-				"title": "App Settings",
-				"themeTitle": "Theme Change",
-				"themeDesc": "You can change applicaton theme.",
-				"langTitle": "Language Change",
-				"langDesc": "You can change applicaton language."
-			},
-			"exit": "Exit",
-			"applicationTour": "Application Tour"
+		"containers": {
+			"appBarTitle": "Containers"
+		},
+		"rewards": {
+			"appBarTitle": "Rewards",
+			"categories": {
+				"book": "Book",
+				"gift": "Gift",
+				"electronics": "Electronics"
+			}
+		},
+		"startThrow": {
+			"appBarTitle": "Start Throw",
+			"desc": "Throw your trash into the special thrash container where you can find on the app and earn points.",
+			"title": "You can start throw your trash this page.",
+			"button": "Start Throw",
+			"dialogTitle": "You must be connected to Bluetooth device",
+			"dialogDesc": "If you want to use throwing on app, you must be connected to Bluetooth device that inside of container. It's not harmful process for you, just for a camera that categorize your trash and earn points.",
+			"dialogButton": "Connect",
+			"dialogButton2": "Turn on Bluetooth",
+			"dialogCancel": "Cancel"
+		},
+		"donation": {
+			"appBarTitle": "Donation Institutions",
+			"institutions": {
+				"tskgv": {
+					"name": "Türk silahlı kuvvetlerini güçlendirme vakfı",
+					"type": "Non-governmental organisation",
+					"establishment": "1987",
+					"description": "The aim of the Turkish Armed Forces Foundation, with the Law No. 3388; It has been determined as to provide material and moral support of our nation in order to contribute to the increase of the war power of the Turkish Armed Forces through the development of our national war industry, the establishment of new war industry branches, the purchase of war weapons, tools and equipment."
+				},
+				"tema": {
+					"name": "TEMA",
+					"type": "Non-governmental organisation",
+					"establishment": "1992",
+					"description": "Turkish Foundation for Combating Erosion, Afforestation and Conservation of Natural Assets, or TEMA for short, is an environmentalist foundation established in Istanbul on September 11, 1992. Combating erosion, afforestation and protection of natural assets are among its main objectives. It is also known as Turkey's most widespread non-governmental organization in the field of nature protection."
+				},
+				"tskmv": {
+					"name": "Türk silahlı kuvvetleri Mehmetçik vakfı",
+					"type": "Non-governmental organisation",
+					"establishment": "1982",
+					"description": "The Turkish Armed Forces Mehmetçik Foundation was established on May 17, 1982 in order to provide social and economic support to the relatives of those who were martyred or lost their lives for any reason, as well as veterans and disabled Mehmetçik, among our non-commissioned officers and privates who sacrificed their lives for the safety of our country and our nation."
+				}
+			}
+		},
+		"profile": {
+			"appBarTitle": "Profile",
+			"logout": "Logout",
+			"logoutConfirm": "Are you sure you want to logout?",
+			"logoutConfirmYes": "Yes",
+			"logoutConfirmNo": "No",
+			"logoutSuccess": "You have been logged out successfully.",
+			"logoutError": "An error occurred while logging out. Please try again.",
+			"points": "You have {} points"
 		}
+	},
+	"settings": {
+		"title": "Settings",
+		"about": {
+			"title": "About Project",
+			"contribitions": "Project Contributors"
+		},
+		"core": {
+			"title": "App Settings",
+			"themeTitle": "Theme Change",
+			"themeDesc": "You can change applicaton theme.",
+			"langTitle": "Language Change",
+			"langDesc": "You can change applicaton language."
+		},
+		"exit": "Exit",
+		"applicationTour": "Application Tour"
 	}
 }

@@ -2,8 +2,8 @@ import 'package:cf8tpr1nt/feature/constants/image_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class AppLogoWithText extends StatelessWidget {
-  const AppLogoWithText({super.key, required this.height, required this.width});
+class AppTextLogo extends StatelessWidget {
+  const AppTextLogo({super.key, required this.height, required this.width});
   final double height;
   final double width;
 
@@ -28,6 +28,7 @@ class AppLogoWithText extends StatelessWidget {
   Widget get buildText {
     return SvgPicture.asset(
       ImagePaths.instance.textAppLogo,
+      alignment: Alignment.centerRight,
       width: width,
       height: height,
     );
