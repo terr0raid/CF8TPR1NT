@@ -69,3 +69,10 @@ extension DurationExtension on BuildContext {
   Duration get overDuration => const Duration(milliseconds: 800);
   Duration get highDuration => const Duration(seconds: 1);
 }
+
+extension BorderRadiusExtension on BuildContext {
+  BorderRadius get lowBorderRadius => BorderRadius.circular(lowValue);
+  BorderRadius get normalBorderRadius => BorderRadius.circular(normalValue);
+  BorderRadius get mediumBorderRadius => BorderRadius.circular(mediumValue);
+  BorderRadius get highBorderRadius => BorderRadius.circular(highValue);
+}

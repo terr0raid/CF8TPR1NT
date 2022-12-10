@@ -5,7 +5,7 @@ class RewardModel {
   final String? title;
   final String? description;
   final String? image;
-  final String? points;
+  final int? points;
   final String? id;
   final String? language;
   final String? type;
@@ -29,7 +29,7 @@ class RewardModel {
       title: data?['title'] as String?,
       description: data?['description'] as String?,
       image: data?['image'] as String?,
-      points: data?['points'] as String?,
+      points: data?['points'] as int?,
       id: data?['id'] as String?,
       language: data?['language'] as String?,
       type: data?['type'] as String?,

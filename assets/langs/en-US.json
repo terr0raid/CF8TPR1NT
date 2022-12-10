@@ -48,6 +48,15 @@
 				"book": "Book",
 				"gift": "Gift",
 				"electronics": "Electronics"
+			},
+			"rewardDetail": {
+				"notFoundReward": "Reward not found.",
+				"category": "Category",
+				"appBarTitle": "Reward Detail",
+				"desc": "Use above button to claim your reward. (remaining {} points)",
+				"cantGetDesc": "You can't get this reward because you don't have enough points. (You needs {} points to get this reward)",
+				"points": "Points",
+				"claimReward": "Claim Reward"
 			}
 		},
 		"startThrow": {

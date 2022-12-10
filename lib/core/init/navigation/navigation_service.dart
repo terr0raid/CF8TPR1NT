@@ -1,5 +1,6 @@
+import 'package:cf8tpr1nt/core/extensions/context_extensions.dart';
 import 'package:cf8tpr1nt/core/init/navigation/i_navigation.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class NavigationService implements INavigationService {
   NavigationService._init();
@@ -36,8 +37,7 @@ class NavigationService implements INavigationService {
   }
 
   @override
-  T? getRouteArgs<T>() {
-    final settings = ModalRoute.of(navigatorKey.currentContext!)!.settings;
-    return settings.arguments as T;
+  T? getRouteArgs<T>(BuildContext ctx) {
+    return ctx.routeSettings.arguments as T;
   }
 }

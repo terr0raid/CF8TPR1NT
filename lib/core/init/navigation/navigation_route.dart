@@ -101,7 +101,7 @@ class NavigationRoute {
     Object? args,
   }) {
     return MaterialPageRoute(
-      builder: (context) => widget,
+      builder: (context) => SafeArea(child: widget),
       settings: RouteSettings(
         name: pageName,
         arguments: args,

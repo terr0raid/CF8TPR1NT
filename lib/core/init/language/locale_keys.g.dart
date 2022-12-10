@@ -39,6 +39,14 @@ abstract class  LocaleKeys {
   static const home_rewards_categories_gift = 'home.rewards.categories.gift';
   static const home_rewards_categories_electronics = 'home.rewards.categories.electronics';
   static const home_rewards_categories = 'home.rewards.categories';
+  static const home_rewards_rewardDetail_notFoundReward = 'home.rewards.rewardDetail.notFoundReward';
+  static const home_rewards_rewardDetail_category = 'home.rewards.rewardDetail.category';
+  static const home_rewards_rewardDetail_appBarTitle = 'home.rewards.rewardDetail.appBarTitle';
+  static const home_rewards_rewardDetail_desc = 'home.rewards.rewardDetail.desc';
+  static const home_rewards_rewardDetail_cantGetDesc = 'home.rewards.rewardDetail.cantGetDesc';
+  static const home_rewards_rewardDetail_points = 'home.rewards.rewardDetail.points';
+  static const home_rewards_rewardDetail_claimReward = 'home.rewards.rewardDetail.claimReward';
+  static const home_rewards_rewardDetail = 'home.rewards.rewardDetail';
   static const home_rewards = 'home.rewards';
   static const home_startThrow_appBarTitle = 'home.startThrow.appBarTitle';
   static const home_startThrow_desc = 'home.startThrow.desc';

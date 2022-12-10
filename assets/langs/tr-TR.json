@@ -59,6 +59,15 @@
 				"book": "Kitap",
 				"gift": "Hediye",
 				"electronics": "Elektronik"
+			},
+			"rewardDetail": {
+				"notFoundReward": "Ödül bulunamadı.",
+				"appBarTitle": "Ödül Detayı",
+				"category": "Kategori",
+				"desc": "Ödülünüzü almak için yukarıdaki butona tıklayınız. (ödül alındıktan sonra kalan puan {})",
+				"cantGetDesc": "Bu ödülü alabilmek için yeterli puana sahip değilsiniz. (Ödülü alabilmek için {} puana ihtiyacınız var)",
+				"points": "Puan",
+				"claimReward": "Ödülü Al"
 			}
 		},
 		"donation": {
