@@ -1,9 +1,11 @@
 import 'package:cf8tpr1nt/core/base/widgets/not_found_navigation_widget.dart';
-import 'package:cf8tpr1nt/core/constants/navigation/navigation_constants.dart';
+import 'package:cf8tpr1nt/feature/constants/navigation/navigation_constants.dart';
 import 'package:cf8tpr1nt/view/authentication/login/view/login_view.dart';
 import 'package:cf8tpr1nt/view/authentication/onboard/view/onboard_view.dart';
 import 'package:cf8tpr1nt/view/authentication/splash/view/splash_view.dart';
 import 'package:cf8tpr1nt/view/home/containers/view/containers_view.dart';
+import 'package:cf8tpr1nt/view/home/donations/donations_detail/view/donations_detail_view.dart';
+import 'package:cf8tpr1nt/view/home/donations/model/donation_model.dart';
 import 'package:cf8tpr1nt/view/home/donations/view/donations_view.dart';
 import 'package:cf8tpr1nt/view/home/home/view/home_view.dart';
 import 'package:cf8tpr1nt/view/home/profile/view/profile_view.dart';
@@ -46,11 +48,6 @@ class NavigationRoute {
           const ContainersView(),
           NavigationConstants.CONTAINERS_VIEW,
         );
-      // case NavigationConstants.CONTAINER_DETAIL_VIEW:
-      //   return normalNavigate(
-      //     const LoginView(),
-      //     NavigationConstants.CONTAINER_DETAIL_VIEW,
-      //   );
       case NavigationConstants.REWARDS_VIEW:
         return normalNavigate(
           const RewardsView(),
@@ -67,11 +64,12 @@ class NavigationRoute {
           const DonationsView(),
           NavigationConstants.DONATION_VIEW,
         );
-      // case NavigationConstants.DONATION_DETAIL_VIEW:
-      //   return normalNavigate(
-      //     const LoginView(),
-      //     NavigationConstants.DONATION_DETAIL_VIEW,
-      //   );
+      case NavigationConstants.DONATION_DETAIL_VIEW:
+        return normalNavigate(
+          const DonationsDetailView(),
+          NavigationConstants.DONATION_DETAIL_VIEW,
+          args: args.arguments! as DonationModel,
+        );
       case NavigationConstants.START_THROW_VIEW:
         return normalNavigate(
           const StartThrowView(),

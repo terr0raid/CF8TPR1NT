@@ -3,7 +3,7 @@
 import 'dart:async';
 
 import 'package:cf8tpr1nt/core/base/model/base_view_model.dart';
-import 'package:cf8tpr1nt/feature/constants/image_paths.dart';
+import 'package:cf8tpr1nt/feature/constants/app/image_paths.dart';
 import 'package:cf8tpr1nt/feature/utils/byte_converter.dart';
 import 'package:cf8tpr1nt/view/home/containers/service/containers_service.dart';
 import 'package:flutter/material.dart';

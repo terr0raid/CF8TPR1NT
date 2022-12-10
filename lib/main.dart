@@ -1,5 +1,5 @@
 import 'package:cf8tpr1nt/core/constants/app/app_constants.dart';
-import 'package:cf8tpr1nt/core/init/cache/locale_manager.dart';
+import 'package:cf8tpr1nt/feature/init/locale_manager.dart';
 import 'package:cf8tpr1nt/core/init/language/language_manager.dart';
 import 'package:cf8tpr1nt/core/init/navigation/navigation_route.dart';
 import 'package:cf8tpr1nt/core/init/navigation/navigation_service.dart';

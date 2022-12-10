@@ -1,7 +1,7 @@
-import 'package:cf8tpr1nt/core/init/cache/locale_manager.dart';
 import 'package:cf8tpr1nt/core/init/firebase/firebase_service.dart';
 import 'package:cf8tpr1nt/core/init/navigation/navigation_service.dart';
 import 'package:cf8tpr1nt/core/init/network/network_service.dart';
+import 'package:cf8tpr1nt/feature/init/locale_manager.dart';
 import 'package:flutter/material.dart';
 
 mixin BaseViewModel {

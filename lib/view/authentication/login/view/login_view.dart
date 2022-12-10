@@ -5,7 +5,7 @@ import 'package:cf8tpr1nt/core/base/widgets/buttons/login_button_with_icon.dart'
 import 'package:cf8tpr1nt/core/extensions/context_extensions.dart';
 import 'package:cf8tpr1nt/core/init/firebase/auth_repository.dart';
 import 'package:cf8tpr1nt/core/init/language/locale_keys.g.dart';
-import 'package:cf8tpr1nt/feature/constants/image_paths.dart';
+import 'package:cf8tpr1nt/feature/constants/app/image_paths.dart';
 import 'package:cf8tpr1nt/feature/widgets/svg/app_text_logo.dart';
 import 'package:cf8tpr1nt/view/authentication/login/service/login_service.dart';
 import 'package:cf8tpr1nt/view/authentication/login/viewmodel/login_view_model.dart';

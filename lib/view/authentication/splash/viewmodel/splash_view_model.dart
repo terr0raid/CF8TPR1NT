@@ -1,6 +1,6 @@
 import 'package:cf8tpr1nt/core/base/model/base_view_model.dart';
 import 'package:cf8tpr1nt/core/constants/enums/preferences_keys.dart';
-import 'package:cf8tpr1nt/core/constants/navigation/navigation_constants.dart';
+import 'package:cf8tpr1nt/feature/constants/navigation/navigation_constants.dart';
 import 'package:cf8tpr1nt/view/authentication/splash/service/splash_service.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';

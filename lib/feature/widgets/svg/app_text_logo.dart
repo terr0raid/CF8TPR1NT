@@ -1,4 +1,4 @@
-import 'package:cf8tpr1nt/feature/constants/image_paths.dart';
+import 'package:cf8tpr1nt/feature/constants/app/image_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

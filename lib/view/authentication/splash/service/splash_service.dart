@@ -1,4 +1,4 @@
-import 'package:cf8tpr1nt/core/init/cache/locale_manager.dart';
+import 'package:cf8tpr1nt/feature/init/locale_manager.dart';
 import 'package:cf8tpr1nt/core/init/firebase/auth_repository.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 

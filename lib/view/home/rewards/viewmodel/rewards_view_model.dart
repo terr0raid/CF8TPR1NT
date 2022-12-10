@@ -1,5 +1,5 @@
 import 'package:cf8tpr1nt/core/base/model/base_view_model.dart';
-import 'package:cf8tpr1nt/core/constants/navigation/navigation_constants.dart';
+import 'package:cf8tpr1nt/feature/constants/navigation/navigation_constants.dart';
 import 'package:cf8tpr1nt/view/home/rewards/model/reward_model.dart';
 import 'package:cf8tpr1nt/view/home/rewards/service/rewards_service.dart';
 import 'package:easy_localization/easy_localization.dart';

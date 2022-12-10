@@ -1,6 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
-import 'package:cf8tpr1nt/core/constants/navigation/navigation_constants.dart';
+import 'package:cf8tpr1nt/feature/constants/navigation/navigation_constants.dart';
 import 'package:cf8tpr1nt/core/init/language/locale_keys.g.dart';
 import 'package:cf8tpr1nt/view/home/containers/view/containers_view.dart';
 import 'package:cf8tpr1nt/view/home/donations/view/donations_view.dart';

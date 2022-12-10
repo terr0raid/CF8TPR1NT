@@ -1,5 +1,5 @@
 import 'package:cf8tpr1nt/core/base/model/base_view_model.dart';
-import 'package:cf8tpr1nt/core/constants/navigation/navigation_constants.dart';
+import 'package:cf8tpr1nt/feature/constants/navigation/navigation_constants.dart';
 import 'package:cf8tpr1nt/core/extensions/context_extensions.dart';
 import 'package:cf8tpr1nt/feature/enums/home_navbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
