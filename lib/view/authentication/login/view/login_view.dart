@@ -6,7 +6,6 @@ import 'package:cf8tpr1nt/core/extensions/context_extensions.dart';
 import 'package:cf8tpr1nt/core/init/firebase/auth_repository.dart';
 import 'package:cf8tpr1nt/core/init/language/locale_keys.g.dart';
 import 'package:cf8tpr1nt/feature/constants/image_paths.dart';
-import 'package:cf8tpr1nt/feature/model/error_model.dart';
 import 'package:cf8tpr1nt/feature/widgets/svg/app_text_logo.dart';
 import 'package:cf8tpr1nt/view/authentication/login/service/login_service.dart';
 import 'package:cf8tpr1nt/view/authentication/login/viewmodel/login_view_model.dart';
@@ -118,9 +117,9 @@ class _LoginViewState extends BaseState<LoginView> {
             onPressed: () {
               try {
                 viewModel.googleSignIn();
-              } on CustomError catch (e) {
+              } on Exception {
                 context.showSnackBar(
-                  e.message ?? LocaleKeys.auth_loginError.tr(),
+                  LocaleKeys.auth_loginError.tr(),
                 );
               }
             },
@@ -146,9 +145,9 @@ class _LoginViewState extends BaseState<LoginView> {
             onPressed: () {
               try {
                 viewModel.facebookSignIn();
-              } on CustomError catch (e) {
+              } on Exception {
                 context.showSnackBar(
-                  e.message ?? LocaleKeys.auth_loginError.tr(),
+                  LocaleKeys.auth_loginError.tr(),
                 );
               }
             },

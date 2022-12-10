@@ -135,7 +135,7 @@ abstract class _StartThrowViewModelBase with Store, BaseViewModel {
         btDevice = null;
       });
     } catch (e) {
-      print(e);
+      // print(e);
       setIsListening(value: false);
     }
   }
@@ -175,7 +175,7 @@ abstract class _StartThrowViewModelBase with Store, BaseViewModel {
         connection?.output.add(Uint8List.fromList(utf8.encode(text.trim())));
         await connection?.output.allSent;
       } catch (e) {
-        print(e);
+        // print(e);
         setIsListening(value: false);
       }
     }
