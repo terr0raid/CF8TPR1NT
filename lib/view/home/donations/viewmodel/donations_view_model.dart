@@ -1,6 +1,7 @@
 import 'package:cf8tpr1nt/core/base/model/base_view_model.dart';
 import 'package:cf8tpr1nt/core/init/language/locale_keys_index.dart';
-import 'package:cf8tpr1nt/feature/constants/image_paths.dart';
+import 'package:cf8tpr1nt/feature/constants/app/image_paths.dart';
+import 'package:cf8tpr1nt/feature/constants/navigation/navigation_constants.dart';
 import 'package:cf8tpr1nt/view/home/donations/model/donation_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:mobx/mobx.dart';
@@ -50,5 +51,12 @@ abstract class _DonationsViewModelBase with Store, BaseViewModel {
         type: LocaleKeys.home_donation_institutions_tskmv_type,
       ),
     ]);
+  }
+
+  Future<void> toDetailPage(DonationModel item) async {
+    await navigation.navigateToPage(
+      path: NavigationConstants.DONATION_DETAIL_VIEW,
+      arguments: item,
+    );
   }
 }

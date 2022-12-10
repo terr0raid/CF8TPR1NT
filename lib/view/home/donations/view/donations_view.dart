@@ -58,7 +58,7 @@ class _DonationsViewState extends BaseState<DonationsView> {
       leading: buildListTileLeading(item.image!),
       title: buildListTileTitle(item.name?.tr()),
       subtitle: buildListTileSubtitle(item.description?.tr()),
-      trailing: buildListTileTrailing(item.type?.tr()),
+      trailing: buildListTileTrailing(item),
     );
   }
 
@@ -70,9 +70,11 @@ class _DonationsViewState extends BaseState<DonationsView> {
     );
   }
 
-  Widget buildListTileTrailing(String? type) {
+  Widget buildListTileTrailing(DonationModel item) {
     return IconButton(
-      onPressed: () {},
+      onPressed: () async {
+        await viewModel.toDetailPage(item);
+      },
       icon: const Icon(Icons.arrow_forward_ios),
     );
   }

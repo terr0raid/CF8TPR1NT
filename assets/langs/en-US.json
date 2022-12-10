@@ -72,6 +72,21 @@
 		},
 		"donation": {
 			"appBarTitle": "Donation Institutions",
+			"donationDetail": {
+				"appBarTitle": "Donation Detail",
+				"desc": "You can donate your points to {} institution.",
+				"donate": "Donate",
+				"type": "Type",
+				"establishment": "Establishment",
+				"donateSuccess": "You have donated successfully.",
+				"donateError": "An error occurred while donating. Please try again.",
+				"donateConfirm": "Are you sure?",
+				"donateConfirmYes": "Yes",
+				"donateConfirmNo": "No",
+				"donateConfirmTitle": "Confirm Donation",
+				"donatePoints": "Choose how many points you want to donate.",
+				"donateConfirmDesc": "You will donate {} points to {}."
+			},
 			"institutions": {
 				"tskgv": {
 					"name": "Türk silahlı kuvvetlerini güçlendirme vakfı",

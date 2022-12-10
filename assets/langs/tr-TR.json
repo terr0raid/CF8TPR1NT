@@ -72,6 +72,21 @@
 		},
 		"donation": {
 			"appBarTitle": "Bağış Kurumları",
+			"donationDetail": {
+				"appBarTitle": "Bağış Detayı",
+				"desc": "Topladığınız puanları {} kurumuna bağışlayabilirsiniz.",
+				"type": "Kurum Türü",
+				"establishment": "Kuruluş Tarihi",
+				"donate": "Bağış yap",
+				"donateSuccess": "Bağış başarıyla gerçekleşti.",
+				"donateError": "Bağış yaparken bir hata oluştu. Lütfen tekrar deneyin.",
+				"donateConfirm": "Bağış yapmak istediğinize emin misiniz?",
+				"donateConfirmYes": "Evet",
+				"donateConfirmNo": "Hayır",
+				"donateConfirmTitle": "Bağış Onayı",
+				"donatePoints": "Bağış yapılacak puan",
+				"donateConfirmDesc": "{} kurumuna {} puan bağış yapmak üzeresiniz. Devam etmek istiyor musunuz?"
+			},
 			"institutions": {
 				"tskgv": {
 					"name": "Türk silahlı kuvvetlerini güçlendirme vakfı",
