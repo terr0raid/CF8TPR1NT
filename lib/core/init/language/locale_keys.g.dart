@@ -59,6 +59,7 @@ abstract class  LocaleKeys {
   static const home_startThrow_dialogCancel = 'home.startThrow.dialogCancel';
   static const home_startThrow = 'home.startThrow';
   static const home_donation_appBarTitle = 'home.donation.appBarTitle';
+  static const home_donation_desc = 'home.donation.desc';
   static const home_donation_donationDetail_appBarTitle = 'home.donation.donationDetail.appBarTitle';
   static const home_donation_donationDetail_desc = 'home.donation.donationDetail.desc';
   static const home_donation_donationDetail_donate = 'home.donation.donationDetail.donate';
