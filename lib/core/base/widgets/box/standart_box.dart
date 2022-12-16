@@ -13,7 +13,7 @@ class StandartBox extends StatelessWidget {
       height: height,
       margin: context.paddingLow,
       decoration: BoxDecoration(
-        color: color ?? context.colors.inversePrimary.withOpacity(0.6),
+        color: color ?? context.colors.secondaryContainer.withOpacity(0.2),
         borderRadius: context.lowBorderRadius,
       ),
       child: Center(child: child),

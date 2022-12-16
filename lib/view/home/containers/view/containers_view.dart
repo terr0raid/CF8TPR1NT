@@ -2,12 +2,15 @@ import 'dart:async';
 
 import 'package:cf8tpr1nt/core/base/state/base_state.dart';
 import 'package:cf8tpr1nt/core/base/view/base_view.dart';
+import 'package:cf8tpr1nt/core/constants/enums/app_theme.dart';
 import 'package:cf8tpr1nt/core/init/firebase/firebase_service.dart';
+import 'package:cf8tpr1nt/core/init/provider/theme_provider.dart';
 import 'package:cf8tpr1nt/view/home/containers/service/containers_service.dart';
 import 'package:cf8tpr1nt/view/home/containers/viewmodel/containers_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:provider/provider.dart';
 
 class ContainersView extends StatefulWidget {
   const ContainersView({super.key});
@@ -48,6 +51,23 @@ class _ContainersViewState extends BaseState<ContainersView> {
     return Scaffold(
       body: Observer(
         builder: (_) {
+          if (context.watch<ThemeProvider>().currentThemeEnum ==
+              AppThemesEnum.DARK) {
+            viewModel
+                .loadMapStyles(context.watch<ThemeProvider>().currentThemeEnum);
+
+            viewModel.controller.future.then((value) async {
+              await value.setMapStyle(viewModel.mapStyle);
+            });
+          } else {
+            viewModel
+                .loadMapStyles(context.watch<ThemeProvider>().currentThemeEnum);
+
+            viewModel.controller.future.then((value) async {
+              await value.setMapStyle(viewModel.mapStyle);
+            });
+          }
+
           return Stack(
             children: [
               GoogleMap(

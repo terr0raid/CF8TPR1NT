@@ -3,10 +3,12 @@
 import 'dart:async';
 
 import 'package:cf8tpr1nt/core/base/model/base_view_model.dart';
+import 'package:cf8tpr1nt/core/constants/enums/app_theme.dart';
 import 'package:cf8tpr1nt/feature/constants/app/image_paths.dart';
 import 'package:cf8tpr1nt/feature/utils/byte_converter.dart';
 import 'package:cf8tpr1nt/view/home/containers/service/containers_service.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:mobx/mobx.dart';
 part 'containers_view_model.g.dart';
@@ -21,6 +23,9 @@ abstract class _ContainersViewModelBase with Store, BaseViewModel {
 
   @observable
   Set<Marker> markers = <Marker>{};
+
+  @observable
+  String mapStyle = '';
 
   @observable
   bool isLoading = false;
@@ -44,9 +49,17 @@ abstract class _ContainersViewModelBase with Store, BaseViewModel {
   }
 
   @action
+  Future<void> loadMapStyles(AppThemesEnum value) async {
+    if (value == AppThemesEnum.DARK) {
+      mapStyle = await rootBundle.loadString('assets/map_styles/dark.json');
+    } else {
+      mapStyle = await rootBundle.loadString('assets/map_styles/standart.json');
+    }
+  }
+
+  @action
   Future<void> _addMarkers() async {
     _changeLoading();
-
     final markerIcon = await ImageConverter.getBytesFromAsset(
       ImagePaths.instance.thrashLogo,
       100,
