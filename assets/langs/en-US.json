@@ -72,6 +72,7 @@
 		},
 		"donation": {
 			"appBarTitle": "Donation Institutions",
+			"desc": "You can donate the points you have to the institutions mentioned on this page.",
 			"donationDetail": {
 				"appBarTitle": "Donation Detail",
 				"desc": "You can donate your points to {} institution.",

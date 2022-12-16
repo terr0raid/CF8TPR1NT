@@ -72,6 +72,7 @@
 		},
 		"donation": {
 			"appBarTitle": "Bağış Kurumları",
+			"desc": "Bu sayfada, sahip olduğunuz puanları belirtilen kurumlara bağışlayabilirsiniz.",
 			"donationDetail": {
 				"appBarTitle": "Bağış Detayı",
 				"desc": "Topladığınız puanları {} kurumuna bağışlayabilirsiniz.",

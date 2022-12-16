@@ -1,10 +1,10 @@
 import 'package:cf8tpr1nt/core/constants/app/app_constants.dart';
-import 'package:cf8tpr1nt/feature/init/locale_manager.dart';
 import 'package:cf8tpr1nt/core/init/language/language_manager.dart';
 import 'package:cf8tpr1nt/core/init/navigation/navigation_route.dart';
 import 'package:cf8tpr1nt/core/init/navigation/navigation_service.dart';
 import 'package:cf8tpr1nt/core/init/provider/application_provider.dart';
 import 'package:cf8tpr1nt/core/init/provider/theme_provider.dart';
+import 'package:cf8tpr1nt/feature/init/locale_manager.dart';
 import 'package:cf8tpr1nt/firebase_options.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';

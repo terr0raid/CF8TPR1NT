@@ -2,9 +2,9 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cf8tpr1nt/core/base/state/base_state.dart';
 import 'package:cf8tpr1nt/core/base/view/base_view.dart';
+import 'package:cf8tpr1nt/core/base/widgets/box/standart_box.dart';
 import 'package:cf8tpr1nt/core/base/widgets/skeleton/list_tile_skeleton.dart';
 import 'package:cf8tpr1nt/core/extensions/context_extensions.dart';
-import 'package:cf8tpr1nt/core/init/language/language_manager.dart';
 import 'package:cf8tpr1nt/core/init/language/locale_keys.g.dart';
 import 'package:cf8tpr1nt/view/home/rewards/model/reward_model.dart';
 import 'package:cf8tpr1nt/view/home/rewards/service/rewards_service.dart';
@@ -42,12 +42,6 @@ class _RewardsViewState extends BaseState<RewardsView> {
     return Scaffold(
       appBar: AppBar(
         title: Text(LocaleKeys.home_rewards_appBarTitle.tr()),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.refresh),
-            onPressed: () => LanguageManager.instance.changeLanguage(context),
-          ),
-        ],
       ),
       body: buildRewardsBody,
     );
@@ -80,15 +74,20 @@ class _RewardsViewState extends BaseState<RewardsView> {
     );
   }
 
-  ListTile buildListTile(RewardModel item) {
+  Widget buildListTile(RewardModel item) {
     final haveImageUrl = item.image != '' && item.image != null;
-    return ListTile(
-      leading: haveImageUrl
-          ? buildListTileLeading(item.image!)
-          : const Icon(Icons.image),
-      title: buildListTileTitle(item.title),
-      subtitle: buildListTileSubtitle(item.description),
-      trailing: buildListTileTrailing(item),
+    return StandartBox(
+      child: Padding(
+        padding: context.paddingLowVertical,
+        child: ListTile(
+          leading: haveImageUrl
+              ? buildListTileLeading(item.image!)
+              : const Icon(Icons.image),
+          title: buildListTileTitle(item.title),
+          subtitle: buildListTileSubtitle(item.description),
+          trailing: buildListTileTrailing(item),
+        ),
+      ),
     );
   }
 
@@ -126,10 +125,20 @@ class _RewardsViewState extends BaseState<RewardsView> {
       description ?? '',
       maxLines: 2,
       overflow: TextOverflow.ellipsis,
+      style: context.textTheme.subtitle2!.copyWith(
+        color: context.colors.onSurface.withOpacity(0.6),
+      ),
     );
   }
 
-  Text buildListTileTitle(String? title) => Text(title ?? '');
+  Widget buildListTileTitle(String? title) => AutoSizeText(
+        title ?? '',
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
+        style: context.textTheme.headline6!.copyWith(
+          color: context.colors.onSurface,
+        ),
+      );
 
   Widget get buildShimmerList {
     return Padding(
