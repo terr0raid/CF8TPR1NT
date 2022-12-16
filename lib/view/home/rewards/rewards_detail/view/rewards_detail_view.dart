@@ -47,7 +47,9 @@ class RewardsDetailView extends StatelessWidget {
   }
 
   SingleChildScrollView buildMainSection(
-      BuildContext context, RewardsDetailViewModel viewModel) {
+    BuildContext context,
+    RewardsDetailViewModel viewModel,
+  ) {
     return SingleChildScrollView(
       child: Padding(
         padding: context.paddingLow,
@@ -79,7 +81,9 @@ class RewardsDetailView extends StatelessWidget {
   }
 
   Row buildRewardSection(
-      RewardsDetailViewModel viewModel, BuildContext context) {
+    RewardsDetailViewModel viewModel,
+    BuildContext context,
+  ) {
     return Row(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -114,36 +118,70 @@ class RewardsDetailView extends StatelessWidget {
   }
 
   AutoSizeText buildRewardTitle(
-      RewardsDetailViewModel viewModel, BuildContext context) {
+    RewardsDetailViewModel viewModel,
+    BuildContext context,
+  ) {
     return AutoSizeText(
       viewModel.reward!.title ?? 'No title',
       maxLines: 2,
-      style: context.textTheme.headline6,
+      style: context.textTheme.headline6!.copyWith(
+        color: context.colors.onSurface,
+      ),
     );
   }
 
   Column buildRewardSpecs(
-      RewardsDetailViewModel viewModel, BuildContext context) {
+    RewardsDetailViewModel viewModel,
+    BuildContext context,
+  ) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        AutoSizeText(
-          '${LocaleKeys.home_rewards_rewardDetail_points.tr()}: ${viewModel.reward!.points}',
-          style: context.textTheme.bodySmall,
+        Row(
+          children: [
+            AutoSizeText(
+              '${LocaleKeys.home_rewards_rewardDetail_points.tr()}: ',
+              style: context.textTheme.bodySmall!.copyWith(
+                color: context.colors.onSurface,
+              ),
+            ),
+            AutoSizeText(
+              viewModel.reward!.points.toString(),
+              style: context.textTheme.bodySmall!.copyWith(
+                color: context.colors.onSurface.withOpacity(0.6),
+              ),
+            ),
+          ],
         ),
-        AutoSizeText(
-          '${LocaleKeys.home_rewards_rewardDetail_category.tr()}: ${viewModel.reward!.type}',
-          style: context.textTheme.bodySmall,
+        Row(
+          children: [
+            AutoSizeText(
+              '${LocaleKeys.home_rewards_rewardDetail_category.tr()}: ',
+              style: context.textTheme.bodySmall!.copyWith(
+                color: context.colors.onSurface,
+              ),
+            ),
+            AutoSizeText(
+              viewModel.reward!.type.toString(),
+              style: context.textTheme.bodySmall!.copyWith(
+                color: context.colors.onSurface.withOpacity(0.6),
+              ),
+            ),
+          ],
         ),
       ],
     );
   }
 
   AutoSizeText buildDescriptionSection(
-      RewardsDetailViewModel viewModel, BuildContext context) {
+    RewardsDetailViewModel viewModel,
+    BuildContext context,
+  ) {
     return AutoSizeText(
       viewModel.reward!.description ?? 'No description',
-      style: context.textTheme.bodyText1,
+      style: context.textTheme.bodyText1!.copyWith(
+        color: context.colors.onSurface.withOpacity(0.8),
+      ),
       textAlign: TextAlign.center,
     );
   }
@@ -198,7 +236,9 @@ class RewardsDetailView extends StatelessWidget {
           : LocaleKeys.home_rewards_rewardDetail_cantGetDesc
               .plural(viewModel.remainingPoints),
       maxLines: 2,
-      style: context.textTheme.bodySmall,
+      style: context.textTheme.bodySmall!.copyWith(
+        color: context.colors.onSurface.withOpacity(0.6),
+      ),
       textAlign: TextAlign.center,
     );
   }

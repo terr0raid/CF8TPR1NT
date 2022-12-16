@@ -176,7 +176,9 @@ class _LoginViewState extends BaseState<LoginView> {
   Widget buildButtonText(String text) {
     return AutoSizeText(
       text.tr(),
-      style: context.textTheme.headline6,
+      style: context.textTheme.headline6!.copyWith(
+        color: context.colors.onSurface,
+      ),
       overflow: TextOverflow.ellipsis,
       maxLines: 1,
       textAlign: TextAlign.center,

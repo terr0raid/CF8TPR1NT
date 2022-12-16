@@ -1,9 +1,9 @@
 // ignore_for_file: libr
 
 import 'package:cf8tpr1nt/core/base/model/base_view_model.dart';
-import 'package:cf8tpr1nt/feature/constants/navigation/navigation_constants.dart';
 import 'package:cf8tpr1nt/core/extensions/context_extensions.dart';
 import 'package:cf8tpr1nt/core/init/language/locale_keys.g.dart';
+import 'package:cf8tpr1nt/feature/constants/navigation/navigation_constants.dart';
 import 'package:cf8tpr1nt/feature/model/error_model.dart';
 import 'package:cf8tpr1nt/view/authentication/login/service/login_service.dart';
 import 'package:easy_localization/easy_localization.dart';

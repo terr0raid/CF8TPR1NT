@@ -1,6 +1,5 @@
 import 'package:cf8tpr1nt/feature/model/user_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 abstract class IRewardsDetailService {
   IRewardsDetailService(this._firestore);
@@ -32,7 +31,6 @@ class RewardsDetailService extends IRewardsDetailService {
 
   @override
   Future<void> claimReward() {
-    // TODO: implement claimReward
     throw UnimplementedError();
   }
 }

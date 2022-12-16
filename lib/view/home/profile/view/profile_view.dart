@@ -47,20 +47,14 @@ class _ProfileViewState extends BaseState<ProfileView> {
     return Scaffold(
       appBar: AppBar(
         title: Text(LocaleKeys.home_profile_appBarTitle.tr()),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.logout),
-            onPressed: () async {
-              await FirebaseAuth.instance.signOut();
-            },
-          ),
-        ],
       ),
       body: Center(
         child: Observer(
           builder: (_) {
             return Visibility(
-              visible: !viewModel.isLoading,
+              visible: !viewModel.isLoading ||
+                  viewModel.user != null ||
+                  viewModel.currentUser != null,
               replacement: const CircularProgressIndicator(),
               child: Column(
                 children: [
@@ -88,11 +82,100 @@ class _ProfileViewState extends BaseState<ProfileView> {
   }
 
   Widget get buildUserProfile {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        buildUserProfileLeft,
-      ],
+    return Padding(
+      padding: context.paddingNormalHorizontal,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          buildUserProfileLeft,
+          IconButton(
+            onPressed: () async {
+              await bottomSheetModal;
+              // await viewModel.navigateToSettings();
+            },
+            icon: const Icon(Icons.settings),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Future<dynamic> get bottomSheetModal {
+    return showModalBottomSheet(
+      backgroundColor: context.colors.surface,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(10),
+        ),
+      ),
+      useRootNavigator: true,
+      context: context,
+      builder: (BuildContext context) {
+        return SafeArea(
+          child: Padding(
+            padding: context.paddingLow,
+            child: Column(
+              children: <Widget>[
+                ListTile(
+                  leading: Icon(
+                    Icons.language,
+                    color: context.colors.onSurface,
+                  ),
+                  title: AutoSizeText(
+                    LocaleKeys.settings_core_langTitle.tr(),
+                    style: context.textTheme.subtitle2,
+                  ),
+                  subtitle: AutoSizeText(
+                    LocaleKeys.settings_core_langDesc.tr(),
+                    style: context.textTheme.subtitle2!.copyWith(
+                      color: context.colors.onSurface.withOpacity(0.6),
+                    ),
+                  ),
+                  onTap: () async {
+                    viewModel
+                      ..changeLanguage()
+                      ..goBack();
+                  },
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.color_lens,
+                    color: context.colors.onSurface,
+                  ),
+                  title: AutoSizeText(
+                    LocaleKeys.settings_core_themeTitle.tr(),
+                    style: context.textTheme.subtitle2,
+                  ),
+                  subtitle: AutoSizeText(
+                    LocaleKeys.settings_core_themeDesc.tr(),
+                    style: context.textTheme.subtitle2!.copyWith(
+                      color: context.colors.onSurface.withOpacity(0.6),
+                    ),
+                  ),
+                  onTap: () async {
+                    viewModel
+                      ..changeTheme()
+                      ..goBack();
+                  },
+                ),
+                ListTile(
+                  leading: Icon(
+                    Icons.exit_to_app,
+                    color: context.colors.onSurface,
+                  ),
+                  title: AutoSizeText(
+                    LocaleKeys.settings_exit.tr(),
+                    style: context.textTheme.subtitle2,
+                  ),
+                  onTap: () async {
+                    await viewModel.signOut();
+                  },
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 
@@ -126,7 +209,9 @@ class _ProfileViewState extends BaseState<ProfileView> {
         children: [
           AutoSizeText(
             viewModel.currentUser!.displayName!,
-            style: context.textTheme.headline6,
+            style: context.textTheme.headline6!.copyWith(
+              color: context.colors.onSurface,
+            ),
             maxLines: 1,
             textAlign: TextAlign.left,
           ),

@@ -1,11 +1,12 @@
 import 'package:cf8tpr1nt/core/base/model/base_view_model.dart';
-import 'package:cf8tpr1nt/feature/constants/navigation/navigation_constants.dart';
 import 'package:cf8tpr1nt/core/extensions/context_extensions.dart';
+import 'package:cf8tpr1nt/feature/constants/navigation/navigation_constants.dart';
 import 'package:cf8tpr1nt/feature/enums/home_navbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+
 part 'home_view_model.g.dart';
 
 class HomeViewModel = _HomeViewModelBase with _$HomeViewModel;

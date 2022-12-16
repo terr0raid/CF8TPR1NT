@@ -1,5 +1,6 @@
 import 'package:cf8tpr1nt/core/base/state/base_state.dart';
 import 'package:cf8tpr1nt/core/base/view/base_view.dart';
+import 'package:cf8tpr1nt/core/extensions/context_extensions.dart';
 import 'package:cf8tpr1nt/core/init/language/locale_keys_index.dart';
 import 'package:cf8tpr1nt/view/home/startthrow/viewmodel/start_throw_view_model.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -61,9 +62,6 @@ class _StartThrowViewState extends BaseState<StartThrowView>
 
   Scaffold get buildStartThrowScaffold {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(LocaleKeys.home_startThrow_appBarTitle.tr()),
-      ),
       body: buildBody,
     );
   }
@@ -102,9 +100,14 @@ class _StartThrowViewState extends BaseState<StartThrowView>
 
   Widget get buildAlertDialog {
     return AlertDialog(
-      title: Text(LocaleKeys.home_startThrow_dialogTitle.tr()),
+      title: Text(
+        LocaleKeys.home_startThrow_dialogTitle.tr(),
+        style: context.textTheme.headline5!.copyWith(
+          color: context.colors.onSurface,
+        ),
+      ),
       content: Text(LocaleKeys.home_startThrow_dialogDesc.tr()),
-      elevation: 24,
+      elevation: 10,
       actions: <Widget>[
         TextButton(
           onPressed: viewModel.isBtTurning

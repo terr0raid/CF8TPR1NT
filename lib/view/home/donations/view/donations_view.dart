@@ -1,6 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cf8tpr1nt/core/base/state/base_state.dart';
 import 'package:cf8tpr1nt/core/base/view/base_view.dart';
+import 'package:cf8tpr1nt/core/base/widgets/box/icon_box.dart';
+import 'package:cf8tpr1nt/core/base/widgets/box/standart_box.dart';
 import 'package:cf8tpr1nt/core/extensions/context_extensions.dart';
 import 'package:cf8tpr1nt/core/init/language/locale_keys_index.dart';
 import 'package:cf8tpr1nt/view/home/donations/model/donation_model.dart';
@@ -37,7 +39,24 @@ class _DonationsViewState extends BaseState<DonationsView> {
         title: Text(LocaleKeys.home_donation_appBarTitle.tr()),
       ),
       body: SizedBox.expand(
-        child: buildDonationList,
+        child: Column(
+          children: [
+            IconBox(
+              color: context.colors.tertiary.withOpacity(0.6),
+              icon: const Icon(Icons.info_outline),
+              child: Padding(
+                padding: context.paddingLow,
+                child: AutoSizeText(
+                  LocaleKeys.home_donation_desc.tr(),
+                  style: context.textTheme.subtitle1!.copyWith(
+                    color: context.colors.surface,
+                  ),
+                ),
+              ),
+            ),
+            buildDonationList,
+          ],
+        ),
       ),
     );
   }
@@ -54,19 +73,22 @@ class _DonationsViewState extends BaseState<DonationsView> {
   }
 
   Widget buildListTile(DonationModel item) {
-    return ListTile(
-      leading: buildListTileLeading(item.image!),
-      title: buildListTileTitle(item.name?.tr()),
-      subtitle: buildListTileSubtitle(item.description?.tr()),
-      trailing: buildListTileTrailing(item),
+    return StandartBox(
+      height: context.height * 0.13,
+      child: ListTile(
+        leading: buildListTileLeading(item.image!),
+        title: buildListTileTitle(item.name?.tr()),
+        subtitle: buildListTileSubtitle(item.description?.tr()),
+        trailing: buildListTileTrailing(item),
+      ),
     );
   }
 
   Widget buildListTileLeading(String imageUrl) {
     return CircleAvatar(
-      radius: 40,
+      radius: 35,
       backgroundColor: Colors.transparent,
-      child: Image.asset(imageUrl),
+      child: Image.asset(imageUrl, fit: BoxFit.cover),
     );
   }
 
@@ -82,8 +104,11 @@ class _DonationsViewState extends BaseState<DonationsView> {
   Widget buildListTileSubtitle(String? description) {
     return AutoSizeText(
       description ?? '',
-      maxLines: 3,
+      maxLines: 2,
       overflow: TextOverflow.ellipsis,
+      style: context.textTheme.subtitle1!.copyWith(
+        color: context.colors.onSurface.withOpacity(0.6),
+      ),
     );
   }
 
@@ -93,7 +118,9 @@ class _DonationsViewState extends BaseState<DonationsView> {
       maxLines: 2,
       overflow: TextOverflow.ellipsis,
       minFontSize: 18,
-      style: context.textTheme.headline6,
+      style: context.textTheme.subtitle1!.copyWith(
+        color: context.colors.onSurface,
+      ),
     );
   }
 }

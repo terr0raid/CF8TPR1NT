@@ -54,7 +54,12 @@ abstract class _RewardsDetailViewModelBase with Store, BaseViewModel {
 
   @action
   Future<void> claimReward() async {
-    // await service.claimReward(firebaseService.auth.currentUser!.uid, reward!);
+    // changeLoading();
+    // await service.claimReward(
+    //   firebaseService.auth.currentUser!.uid,
+    //   reward!,
+    // );
+    // changeLoading();
   }
 
   @action

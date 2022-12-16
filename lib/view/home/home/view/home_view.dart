@@ -35,6 +35,7 @@ class HomeView extends StatelessWidget {
             controller: context.read<HomeTabbarProvider>().controller,
             screens: viewModel.buildScreens,
             items: viewModel.navBarItems,
+            backgroundColor: context.colors.background,
             resizeToAvoidBottomInset: true,
             decoration: NavBarDecoration(
               border: Border(
